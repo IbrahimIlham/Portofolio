@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Pribadi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-white text-black font-inter min-h-screen">
+    <!-- Sticky Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 border-b border-gray-200 shadow transition-colors">
+      <div class="max-w-5xl mx-auto flex justify-between items-center px-6 py-4">
+        <span class="font-bold text-xl tracking-tight">M. Ibrahim Ilham</span>
+        <ul class="flex gap-8 font-medium">
+          <li><a href="#home" class="nav-link relative py-1 px-2 hover:text-blue-600 hover:underline underline-offset-8 transition">Home</a></li>
+          <li><a href="#about" class="nav-link relative py-1 px-2 hover:text-blue-600 hover:underline underline-offset-8 transition">About</a></li>
+          <li><a href="#skills" class="nav-link relative py-1 px-2 hover:text-blue-600 hover:underline underline-offset-8 transition">Skills</a></li>
+          <li><a href="#projek" class="nav-link relative py-1 px-2 hover:text-blue-600 hover:underline underline-offset-8 transition">Projek</a></li>
+          <li><a href="#contact" class="nav-link relative py-1 px-2 hover:text-blue-600 hover:underline underline-offset-8 transition">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="pt-24" id="home">
+      <!-- Landing Page -->
+      <section id="landing" class="section-fade flex flex-col-reverse md:flex-row items-center justify-between max-w-5xl mx-auto px-4 py-16 gap-10">
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">M. Ibrahim Ilham</h1>
+          <h2 class="text-xl md:text-2xl font-semibold text-blue-600 mb-6">Machine Learning Enthusiast & Full Stack Developer</h2>
+          <p class="text-gray-600 mb-8 max-w-md mx-auto md:mx-0">Selamat datang di portofolio saya! Saya antusias dalam pengembangan teknologi, data, dan membangun solusi inovatif.</p>
+          <a href="#projek" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition">Lihat Projek</a>
+        </div>
+        <div class="flex-1 flex justify-center md:justify-end">
+          <img src="asset/foto gunung.jpeg" alt="Foto Profil" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-lg border-4 border-blue-100 scale-125" />
+        </div>
+      </section>
+      <hr class="my-12 border-0 h-px w-full bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right hover:from-blue-400 hover:to-blue-600 animate-gradient-move rounded-full shadow" />
+      <!-- About Me Section -->
+      <section id="about" class="section-fade max-w-5xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-600">About Me</h2>
+          <p class="text-gray-700 mb-4 leading-relaxed">Saya adalah seorang pengembang yang bersemangat dalam bidang teknologi, khususnya di Machine Learning dan pengembangan web. Latar belakang saya di bidang Sistem Informasi, dengan minat besar pada data, AI, dan membangun aplikasi yang berdampak positif.</p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
+            <li>Mahasiswa S1 Sistem Informasi</li>
+            <li>Pengalaman di proyek Machine Learning & Web Development</li>
+            <li>Aktif belajar teknologi baru dan kolaborasi tim</li>
+            <li>Terbuka untuk kolaborasi, kerja tim, dan project bersama</li>
+          </ul>
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded mb-2">
+            <span class="text-blue-700 font-semibold">Kolaborasi:</span> Saya percaya kekuatan tim dan kolaborasi dapat menghasilkan solusi yang lebih baik dan inovatif.
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center md:justify-end">
+          <img src="asset/profile.png" alt="About Me Illustration" class="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full shadow-lg bg-blue-50 p-4 scale-125" />
+        </div>
+      </section>
+      <hr class="my-12 border-0 h-px w-full bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right hover:from-blue-400 hover:to-blue-600 animate-gradient-move rounded-full shadow" />
+      <!-- Skills Section -->
+      <section id="skills" class="section-fade max-w-5xl mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600 text-center">Skills</h2>
+        <div class="skills-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Skill 1 -->
+          <div class="card-hover bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12 mb-3">
+            <h3 class="font-semibold text-lg mb-2">Python</h3>
+            <span class="text-xs text-gray-500">Intermediate</span>
+          </div>
+          <!-- Skill 2 -->
+          <div class="card-hover bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mb-3">
+            <h3 class="font-semibold text-lg mb-2">JavaScript</h3>
+            <span class="text-xs text-gray-500">Intermediate</span>
+          </div>
+          <!-- Skill 3 -->
+          <div class="card-hover bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12 mb-3">
+            <h3 class="font-semibold text-lg mb-2">HTML</h3>
+            <span class="text-xs text-gray-500">Intermediate</span>
+          </div>
+          <!-- Skill 4 -->
+          <div class="card-hover bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12 mb-3">
+            <h3 class="font-semibold text-lg mb-2">CSS</h3>
+            <span class="text-xs text-gray-500">Intermediate</span>
+          </div>
+          <!-- Skill 5 -->
+          <div class="card-hover bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="w-12 h-12 mb-3">
+            <h3 class="font-semibold text-lg mb-2">SQL</h3>
+            <span class="text-xs text-gray-500">Intermediate</span>
+          </div>
+          <!-- Skill 6 -->
+          <div class="card-hover bg-white rounded-xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="Machine Learning" class="w-12 h-12 mb-3">
+            <h3 class="font-semibold text-lg mb-2">Machine Learning</h3>
+            <span class="text-xs text-gray-500">Intermediate</span>
+          </div>
+        </div>
+      </section>
+      <hr class="my-12 border-0 h-px w-full bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right hover:from-blue-400 hover:to-blue-600 animate-gradient-move rounded-full shadow" />
+      <!-- Projek Section -->
+      <section id="projek" class="section-fade max-w-5xl mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600 text-center">Projek</h2>
+        <div class="projek-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Contoh projek -->
+          <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform">
+            <img src="asset/web alphalva.png" alt="Projek 1" class="w-full h-48 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+              <h3 class="font-semibold text-lg mb-2">E-Commerce Website</h3>
+              <p class="text-gray-600 mb-4 flex-1">Website E-Commerce dengan integrasi Midtrans sebagai payment gateway untuk memproses pembayaran digital secara aman dan efisien.</p>
+              <a href="https://github.com/IbrahimIlham/Alphalva" target="_blank" class="text-blue-600 font-medium hover:underline mt-auto">Lihat di GitHub</a>
+            </div>
+          </div>
+          <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform">
+            <img src="https://placehold.co/400x250" alt="Projek 2" class="w-full h-48 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+              <h3 class="font-semibold text-lg mb-2">Judul Projek 2</h3>
+              <p class="text-gray-600 mb-4 flex-1">Deskripsi singkat projek 2. Teknologi: JavaScript, Web Development.</p>
+              <a href="https://demo.com/projek2" target="_blank" class="text-blue-600 font-medium hover:underline mt-auto">Demo Live</a>
+            </div>
+          </div>
+          <!-- Tambahkan projek lain sesuai kebutuhan -->
+        </div>
+      </section>
+      <hr class="my-12 border-0 h-px w-full bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right hover:from-blue-400 hover:to-blue-600 animate-gradient-move rounded-full shadow" />
+      <!-- Contact Section -->
+      <section id="contact" class="section-fade max-w-5xl mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600 text-center">Contact</h2>
+        <div class="flex flex-col md:flex-row gap-10 items-center justify-center">
+          <div class="flex-1 flex flex-col gap-6 max-w-md w-full">
+            <div class="bg-white rounded-xl shadow p-6 flex items-center gap-4">
+              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a2 2 0 011.7 1l1.54 2.59a2 2 0 01-.45 2.45l-1.1.88a16.06 16.06 0 006.6 6.6l.88-1.1a2 2 0 012.45-.45l2.59 1.54a2 2 0 011 1.7V19a2 2 0 01-2 2h-1C6.477 21 3 17.523 3 13V5z"/></svg>
+              <div>
+                <div class="font-semibold">No. HP</div>
+                <div class="text-gray-600">+62 896-3760-5978</div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center gap-4">
+              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm2 0a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+              <div>
+                <div class="font-semibold">Email</div>
+                <div class="text-gray-600">ibrahimilham.166@gmail.com</div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center gap-4">
+              <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+              <div>
+                <div class="font-semibold">LinkedIn</div>
+                <a href="https://www.linkedin.com/in/m-ibrahim-ilham-9aa99b289/" target="_blank" class="text-blue-700 hover:underline">linkedin.com/in/M. Ibrahim Ilham</a>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center gap-4">
+              <svg class="w-7 h-7 text-gray-800" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.003-.404 1.018.005 2.046.138 3.006.404 2.289-1.553 3.295-1.23 3.295-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.587 8.2-6.086 8.2-11.384 0-6.63-5.373-12-12-12z"/></svg>
+              <div>
+                <div class="font-semibold">GitHub</div>
+                <a href="https://github.com/IbrahimIlham" target="_blank" class="text-gray-800 hover:underline">github.com/ibrahimilham</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html> 

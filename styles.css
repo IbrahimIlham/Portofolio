@@ -1,0 +1,48 @@
+/* Custom styles (tambahkan jika perlu) */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animasi fade-in untuk section saat muncul */
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover efek untuk card */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+}
+
+/* Responsive tweak untuk grid */
+@media (max-width: 640px) {
+  .skills-grid, .projek-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Navbar active link highlight */
+.nav-link.active {
+  color: #2563eb; /* blue-600 */
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  font-weight: 600;
+}
+
+@keyframes gradient-move {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+.animate-gradient-move {
+  animation: gradient-move 3s linear infinite alternate;
+} 
