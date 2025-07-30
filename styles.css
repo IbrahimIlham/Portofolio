@@ -24,6 +24,39 @@ html {
   box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
 }
 
+/* Grid proyek alignment */
+.projek-grid {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+}
+
+.projek-grid > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projek-grid .card-hover {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projek-grid .card-hover img {
+  flex-shrink: 0;
+}
+
+.projek-grid .card-hover > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projek-grid .card-hover p {
+  flex: 1;
+}
+
 /* Mobile Menu Overlay */
 .mobile-menu-overlay {
   position: fixed;
