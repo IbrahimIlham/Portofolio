@@ -4,19 +4,49 @@ const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeMenuBtn = document.getElementById('close-menu');
 
+// Initialize mobile menu on page load
+document.addEventListener('DOMContentLoaded', function() {
+  if (mobileMenu) {
+    mobileMenu.classList.remove('show');
+  }
+});
+
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
   });
 }
+
 if (closeMenuBtn && mobileMenu) {
   closeMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('show');
+    document.body.style.overflow = ''; // Restore scroll
   });
 }
+
 function closeMenu() {
-  if (mobileMenu) mobileMenu.classList.add('hidden');
+  if (mobileMenu) {
+    mobileMenu.classList.remove('show');
+    document.body.style.overflow = ''; // Restore scroll
+  }
 }
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (mobileMenu && mobileMenu.classList.contains('show')) {
+    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      closeMenu();
+    }
+  }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('show')) {
+    closeMenu();
+  }
+});
 
 // Fade-in animasi saat section masuk viewport
 function revealSections() {
