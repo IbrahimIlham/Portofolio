@@ -24,16 +24,35 @@ html {
   box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
 }
 
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.mobile-menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Mobile Menu Animations */
 #mobile-menu {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transform: translateX(100%);
   visibility: hidden;
   opacity: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
   border-left: 1px solid rgba(0,0,0,0.1);
   box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  z-index: 50;
 }
 
 #mobile-menu.show {

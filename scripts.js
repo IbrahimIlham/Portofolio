@@ -2,6 +2,7 @@
 // Hamburger menu functionality
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 const closeMenuBtn = document.getElementById('close-menu');
 
 // Initialize mobile menu on page load
@@ -9,11 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mobileMenu) {
     mobileMenu.classList.remove('show');
   }
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.classList.remove('show');
+  }
 });
 
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.add('show');
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.classList.add('show');
+    }
     document.body.style.overflow = 'hidden'; // Prevent background scroll
   });
 }
@@ -21,6 +28,9 @@ if (menuBtn && mobileMenu) {
 if (closeMenuBtn && mobileMenu) {
   closeMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('show');
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.classList.remove('show');
+    }
     document.body.style.overflow = ''; // Restore scroll
   });
 }
@@ -28,8 +38,18 @@ if (closeMenuBtn && mobileMenu) {
 function closeMenu() {
   if (mobileMenu) {
     mobileMenu.classList.remove('show');
-    document.body.style.overflow = ''; // Restore scroll
   }
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.classList.remove('show');
+  }
+  document.body.style.overflow = ''; // Restore scroll
+}
+
+// Close menu when clicking on overlay
+if (mobileMenuOverlay) {
+  mobileMenuOverlay.addEventListener('click', () => {
+    closeMenu();
+  });
 }
 
 // Close menu when clicking outside
