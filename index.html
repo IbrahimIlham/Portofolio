@@ -172,26 +172,118 @@
       <hr class="my-12 border-0 h-px w-full bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right hover:from-blue-400 hover:to-blue-600 animate-gradient-move rounded-full shadow" />
       <!-- Bagian Proyek -->
       <section id="projek" class="section-fade max-w-5xl mx-auto px-4 py-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600 text-center">Proyek</h2>
-        <div class="projek-grid grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto" style="max-width:900px;">
-          <!-- Contoh proyek -->
-        <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform w-full max-w-xs">
-            <img src="asset/web alphalva.png" alt="Proyek 1" class="w-full h-48 object-cover">
-            <div class="p-5 flex flex-col flex-grow">
-              <h3 class="font-semibold text-lg mb-2">Alphalva</h3>
-              <p class="text-gray-600 mb-4 flex-grow">Website E-Commerce dengan integrasi Midtrans sebagai payment gateway untuk memproses pembayaran digital secara aman dan efisien.</p>
-              <a href="https://github.com/IbrahimIlham/Alphalva" target="_blank" class="text-blue-600 font-medium hover:underline mt-auto">Lihat di GitHub</a>
+        <h2 class="text-3xl md:text-4xl font-bold mb-10 text-blue-600 text-center">Proyek</h2>
+        
+        <!-- Proyek Alphalva -->
+        <div class="mb-16">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden project-card">
+            <div class="p-6 border-b border-gray-100">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">Alphalva</h3>
+              <p class="text-gray-600 mb-4">Website E-Commerce dengan integrasi Midtrans sebagai payment gateway untuk memproses pembayaran digital secara aman dan efisien.</p>
+              <a href="https://github.com/IbrahimIlham/Alphalva" target="_blank" class="inline-flex items-center gap-2 text-blue-600 font-medium hover:underline">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.003-.404 1.018.005 2.046.138 3.006.404 2.289-1.553 3.295-1.23 3.295-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.587 8.2-6.086 8.2-11.384 0-6.63-5.373-12-12-12z"/>
+                </svg>
+                Lihat di GitHub
+              </a>
+            </div>
+            
+            <!-- Slider Alphalva -->
+            <div class="relative slider-container">
+              <div id="alphalva-slider" class="relative overflow-hidden project-slider">
+                                 <div id="alphalva-slides" class="flex transition-transform duration-500 ease-in-out">
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/alphalva/alphalva1.png" alt="Alphalva Screenshot 1" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/alphalva/alphalva2.png" alt="Alphalva Screenshot 2" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/alphalva/alphalva3.png" alt="Alphalva Screenshot 3" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/alphalva/alphalva4.png" alt="Alphalva Screenshot 4" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/alphalva/alphalva5.png" alt="Alphalva Screenshot 5" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                 </div>
+                
+                <!-- Navigation Buttons -->
+                <button id="alphalva-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 slider-nav-btn">
+                  <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button id="alphalva-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 slider-nav-btn">
+                  <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 slider-dots-container">
+                  <button class="alphalva-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="0"></button>
+                  <button class="alphalva-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="1"></button>
+                  <button class="alphalva-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="2"></button>
+                  <button class="alphalva-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="3"></button>
+                  <button class="alphalva-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="4"></button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform w-full max-w-xs">
-            <img src="asset/totase.png" alt="Proyek 2" class="w-full h-48 object-cover">
-            <div class="p-5 flex flex-col flex-grow">
-              <h3 class="font-semibold text-lg mb-2">Totase</h3>
-              <p class="text-gray-600 mb-4 flex-grow">Website e-commerce yang saya buat adalah platform sederhana untuk menampilkan dan menjual produk secara langsung, Proyek ini saya buat untuk belajar dasar pembuatan website jualan online.</p>
-              <a href="https://github.com/IbrahimIlham/Totase.git" target="_blank" class="text-blue-600 font-medium hover:underline mt-auto">Lihat di GitHub</a>
+        </div>
+        
+        <!-- Proyek Totase -->
+        <div class="mb-16">
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden project-card">
+            <div class="p-6 border-b border-gray-100">
+              <h3 class="text-2xl font-bold text-gray-800 mb-2">Totase</h3>
+              <p class="text-gray-600 mb-4">Website e-commerce yang saya buat adalah platform sederhana untuk menampilkan dan menjual produk secara langsung, Proyek ini saya buat untuk belajar dasar pembuatan website jualan online.</p>
+              <a href="https://github.com/IbrahimIlham/Totase.git" target="_blank" class="inline-flex items-center gap-2 text-blue-600 font-medium hover:underline">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.003-.404 1.018.005 2.046.138 3.006.404 2.289-1.553 3.295-1.23 3.295-1.23.653 1.653.242 2.873.119 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576 4.765-1.587 8.2-6.086 8.2-11.384 0-6.63-5.373-12-12-12z"/>
+                </svg>
+                Lihat di GitHub
+              </a>
+            </div>
+            
+            <!-- Slider Totase -->
+            <div class="relative slider-container">
+              <div id="totase-slider" class="relative overflow-hidden project-slider">
+                                 <div id="totase-slides" class="flex transition-transform duration-500 ease-in-out">
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/totase/totase1.png" alt="Totase Screenshot 1" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/totase/totase2.png" alt="Totase Screenshot 2" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                   <div class="w-full flex-shrink-0">
+                     <img src="asset/totase/totase3.png" alt="Totase Screenshot 3" class="w-full h-80 md:h-96 lg:h-[500px] object-cover">
+                   </div>
+                 </div>
+                
+                <!-- Navigation Buttons -->
+                <button id="totase-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 slider-nav-btn">
+                  <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                  </svg>
+                </button>
+                <button id="totase-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10 slider-nav-btn">
+                  <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 slider-dots-container">
+                  <button class="totase-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="0"></button>
+                  <button class="totase-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="1"></button>
+                  <button class="totase-dot w-3 h-3 md:w-4 md:h-4 rounded-full bg-white/60 hover:bg-white transition-colors duration-300 slider-dot" data-slide="2"></button>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- Tambahkan proyek lain sesuai kebutuhan -->
         </div>
       </section>
       <hr class="my-12 border-0 h-px w-full bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right hover:from-blue-400 hover:to-blue-600 animate-gradient-move rounded-full shadow" />
