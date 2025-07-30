@@ -1,4 +1,22 @@
 // JavaScript dasar untuk portofolio (smooth scroll, animasi, dark mode, dll)
+// Hamburger menu functionality
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenuBtn = document.getElementById('close-menu');
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+  });
+}
+if (closeMenuBtn && mobileMenu) {
+  closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+}
+function closeMenu() {
+  if (mobileMenu) mobileMenu.classList.add('hidden');
+}
 
 // Fade-in animasi saat section masuk viewport
 function revealSections() {
