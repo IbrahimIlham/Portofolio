@@ -26,16 +26,62 @@ html {
 
 /* Mobile Menu Animations */
 #mobile-menu {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transform: translateX(100%);
   visibility: hidden;
   opacity: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
 }
 
 #mobile-menu.show {
   transform: translateX(0) !important;
   visibility: visible;
   opacity: 1;
+}
+
+/* Mobile menu links styling */
+#mobile-menu .nav-link {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #1f2937;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#mobile-menu .nav-link:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  border-color: transparent;
+}
+
+#mobile-menu .nav-link:active {
+  transform: scale(0.95);
+}
+
+#mobile-menu .nav-link svg {
+  transition: all 0.3s ease;
+}
+
+#mobile-menu .nav-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Close button styling */
+#close-menu {
+  transition: all 0.3s ease;
+}
+
+#close-menu:hover {
+  color: #ef4444 !important;
+  transform: scale(1.1);
 }
 
 /* Ensure desktop menu is hidden on mobile */
