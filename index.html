@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist</title>
+  <meta name="title" content="M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist">
+  <meta name="description"
+    content="Portfolio of M. Ibrahim Ilham — Final-year Information Systems student, Full-Stack Developer (Laravel, React) and Applied Data Scientist (Python, XGBoost, SHAP). GPA 3.96/4.00, Cumlaude.">
+  <meta name="keywords"
+    content="M. Ibrahim Ilham, Full-Stack Developer, Data Scientist, Machine Learning, Laravel, React, XGBoost, SHAP, Python, Universitas Gunadarma, BPS">
+  <meta name="author" content="M. Ibrahim Ilham">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <!-- PLACEHOLDER: Update URL if using a custom domain or specific GitHub Pages URL -->
+  <meta property="og:url" content="https://username.github.io/">
+  <meta property="og:title" content="M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist">
+  <meta property="og:description"
+    content="Production web systems and explainable machine learning models — from Laravel APIs to SHAP-driven churn prediction.">
+  <meta property="og:image" content="./assets/favicon.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist">
+  <meta property="twitter:description"
+    content="Production web systems and explainable machine learning models — from Laravel APIs to SHAP-driven churn prediction.">
+  <meta property="twitter:image" content="./assets/favicon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, IBM Plex Sans, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       HEADER / NAVIGATION
+       ====================================================================== -->
+  <header class="header">
+    <div class="container nav-container">
+      <!-- Wordmark Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Ibrahim Ilham Home">
+        <span class="brand-glyph">I</span>
+        <span>Ibrahim Ilham</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions: Status Badge & CTA -->
+      <div class="nav-actions">
+        <div class="status-badge" title="Open to full-time and project opportunities">
+          <span class="status-dot"></span>
+          <span>Available for opportunities</span>
+        </div>
+        <a href="#contact" class="btn-nav">Get in touch</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       HERO SECTION (Asymmetric Two-Column + Decision Tree SVG)
+       ====================================================================== -->
+  <main id="main-content">
+    <section id="hero" class="hero section">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left Column: Bio & Core Pitch -->
+          <div class="hero-content hero-fade-1">
+            <div class="hero-eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>FULL-STACK DEVELOPER · DATA SCIENTIST</span>
+            </div>
+
+            <h1 class="hero-title hero-fade-2">Hi, I'm Ibrahim</h1>
+
+            <p class="hero-subhead hero-fade-3">
+              I build full-stack applications and machine learning solutions that turn complex data into practical,
+              explainable insights.
+            </p>
+
+            <div class="hero-actions hero-fade-4">
+              <a href="#work" class="btn-primary">
+                <span>View Projects</span>
+                <svg class="btn-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Contact Me</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Abstract SVG Classification Scatter Plot Card -->
+          <div class="hero-visual hero-fade-2">
+            <div class="tree-card" aria-label="Abstract classification scatter plot illustration">
+
+              <!-- Scatter Plot SVG with Decision Boundary -->
+              <div class="tree-svg-container">
+                <svg class="scatter-plot-svg" viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Scatter plot showing two clusters separated by a smooth decision boundary curve">
+
+                  <!-- Subtle background grid lines -->
+                  <g class="scatter-grid" stroke="#E4E7EB" stroke-width="1" stroke-dasharray="3 3">
+                    <line x1="40" y1="40" x2="360" y2="40" />
+                    <line x1="40" y1="90" x2="360" y2="90" />
+                    <line x1="40" y1="140" x2="360" y2="140" />
+                    <line x1="40" y1="190" x2="360" y2="190" />
+                    <line x1="100" y1="20" x2="100" y2="210" />
+                    <line x1="180" y1="20" x2="180" y2="210" />
+                    <line x1="260" y1="20" x2="260" y2="210" />
+                    <line x1="340" y1="20" x2="340" y2="210" />
+                  </g>
+
+                  <!-- Smooth S-Curve Decision Boundary -->
+                  <path class="boundary-curve" d="M 50 215 C 120 180, 150 115, 205 100 C 255 85, 285 45, 335 20"
+                    fill="none" stroke="#57626C" stroke-width="2" stroke-linecap="round" />
+
+                  <!-- Cluster 1: Charcoal-Blue Dots (#253B52) -->
+                  <g class="cluster-blue" fill="#253B52">
+                    <circle cx="55" cy="60" r="4" />
+                    <circle cx="75" cy="40" r="3.5" />
+                    <circle cx="80" cy="95" r="4.5" />
+                    <circle cx="95" cy="55" r="4" />
+                    <circle cx="110" cy="35" r="3.5" />
+                    <circle cx="115" cy="80" r="4.5" />
+                    <circle cx="130" cy="60" r="4" />
+                    <circle cx="140" cy="30" r="4" />
+                    <circle cx="145" cy="105" r="4.5" />
+                    <circle cx="160" cy="50" r="3.5" />
+                    <circle cx="165" cy="85" r="4" />
+                    <circle cx="175" cy="25" r="4.5" />
+                    <circle cx="190" cy="65" r="4" />
+                    <circle cx="200" cy="40" r="3.5" />
+                    <circle cx="220" cy="30" r="4.5" />
+                    <circle cx="235" cy="55" r="4" />
+                    <circle cx="250" cy="35" r="3.5" />
+                    <circle cx="270" cy="20" r="4" />
+                    <circle cx="65" cy="130" r="4" />
+                    <circle cx="85" cy="150" r="4.5" />
+                    <circle cx="105" cy="135" r="3.5" />
+                    <circle cx="125" cy="160" r="4" />
+                    <!-- Realistic Boundary Intermixing -->
+                    <circle cx="230" cy="110" r="4" />
+                    <circle cx="180" cy="120" r="3.5" />
+                    <circle cx="150" cy="140" r="4" />
+                  </g>
+
+                  <!-- Cluster 2: Signal-Lime Dots (#8BC53F) -->
+                  <g class="cluster-lime" fill="#8BC53F">
+                    <circle cx="120" cy="200" r="4" />
+                    <circle cx="145" cy="185" r="4.5" />
+                    <circle cx="165" cy="205" r="3.5" />
+                    <circle cx="180" cy="165" r="4" />
+                    <circle cx="200" cy="195" r="4.5" />
+                    <circle cx="210" cy="150" r="3.5" />
+                    <circle cx="225" cy="175" r="4" />
+                    <circle cx="235" cy="205" r="4" />
+                    <circle cx="245" cy="140" r="4.5" />
+                    <circle cx="260" cy="180" r="3.5" />
+                    <circle cx="270" cy="125" r="4" />
+                    <circle cx="280" cy="160" r="4.5" />
+                    <circle cx="290" cy="190" r="4" />
+                    <circle cx="300" cy="110" r="3.5" />
+                    <circle cx="310" cy="145" r="4" />
+                    <circle cx="315" cy="75" r="4.5" />
+                    <circle cx="325" cy="120" r="4" />
+                    <circle cx="335" cy="90" r="3.5" />
+                    <circle cx="340" cy="160" r="4" />
+                    <circle cx="345" cy="60" r="4.5" />
+                    <circle cx="355" cy="100" r="3.5" />
+                    <circle cx="360" cy="135" r="4" />
+                    <!-- Realistic Boundary Intermixing -->
+                    <circle cx="130" cy="115" r="4" />
+                    <circle cx="170" cy="75" r="3.5" />
+                    <circle cx="215" cy="70" r="4" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="tree-caption">
+                <span>A simplified view of how a classification model separates outcomes.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 1: ABOUT
+         ====================================================================== -->
+    <section id="about" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">ABOUT</span>
+          <h2 class="section-title">Engineering Rigor Across the Stack</h2>
+        </div>
+
+        <!-- Asymmetric Bio Split: Monogram Avatar Tile + Text -->
+        <div class="about-hero-grid">
+
+          <!-- Avatar Monogram Tile -->
+          <!-- NOTE: To use a real photo, replace this .avatar-tile container with:
+               <img src="./assets/images/profile.jpg" alt="M. Ibrahim Ilham" class="avatar-tile" style="object-fit: cover;"> -->
+          <div class="avatar-tile" aria-label="M. Ibrahim Ilham Initials Avatar">
+            <!-- Subtle Geometric Line Grid Background Pattern -->
+            <svg class="avatar-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-pattern" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#253B52" stroke-width="0.75" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+            </svg>
+            <span class="avatar-monogram">MII</span>
+            <span class="avatar-role">DEV &amp; ML</span>
+          </div>
+
+          <!-- Bio Text & Key Highlights -->
+          <div class="about-bio-col">
+            <p class="about-bio-text  ">
+              Final-year Information Systems student at <strong>Universitas Gunadarma (GPA 3.96/4.00, Cumlaude)</strong>
+              with hands-on experience across full-stack web development and applied data science. Built production
+              systems for a national government institution <strong>(Badan Pusat Statistik)</strong> and developed
+              machine learning models for real business problems — from database architecture to model explainability.
+              <strong>BNSP-certified Data Analyst</strong>.
+            </p>
+
+            <div class="about-highlights">
+              <span class="bio-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                GPA 3.96 / 4.00 · Cumlaude
+              </span>
+              <span class="bio-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+                BNSP Certified Data Analyst
+              </span>
+              <span class="bio-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Govt Production Systems Shipped
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2x2 Skill Category Cards Grid -->
+        <div class="category-cards-grid">
+
+          <!-- Category 1: Full-Stack -->
+          <div class="category-card">
+            <div class="category-card-header">
+              <div class="category-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="category-card-title">Full-Stack Development</h3>
+            </div>
+            <div class="category-tech-list">
+              <span class="tech-tag-pill">Laravel</span>
+              <span class="tech-tag-pill">React</span>
+              <span class="tech-tag-pill">Inertia.js</span>
+              <span class="tech-tag-pill">JavaScript</span>
+              <span class="tech-tag-pill">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Data Science & ML -->
+          <div class="category-card">
+            <div class="category-card-header">
+              <div class="category-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="category-card-title">Data Science &amp; ML</h3>
+            </div>
+            <div class="category-tech-list">
+              <span class="tech-tag-pill">Python</span>
+              <span class="tech-tag-pill">XGBoost</span>
+              <span class="tech-tag-pill">SHAP</span>
+              <span class="tech-tag-pill">Pandas</span>
+              <span class="tech-tag-pill">Scikit-learn</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Database & Visualization -->
+          <div class="category-card">
+            <div class="category-card-header">
+              <div class="category-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3 class="category-card-title">Database &amp; Visualization</h3>
+            </div>
+            <div class="category-tech-list">
+              <span class="tech-tag-pill">MySQL</span>
+              <span class="tech-tag-pill">SQL Server</span>
+              <span class="tech-tag-pill">Power BI</span>
+              <span class="tech-tag-pill">Looker Studio</span>
+              <span class="tech-tag-pill">Chart.js</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Workflow -->
+          <div class="category-card">
+            <div class="category-card-header">
+              <div class="category-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="category-card-title">Tools &amp; Workflow</h3>
+            </div>
+            <div class="category-tech-list">
+              <span class="tech-tag-pill">Git</span>
+              <span class="tech-tag-pill">GitHub</span>
+              <span class="tech-tag-pill">Vite</span>
+              <span class="tech-tag-pill">PHPUnit</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Download CV Action -->
+        <div class="about-footer-cta">
+          <!-- PLACEHOLDER: Update CV link destination -->
+          <a href="#" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download Curriculum Vitae</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: SELECTED WORK
+         ====================================================================== -->
+    <section id="work" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">SELECTED WORK</span>
+          <h2 class="section-title">Featured &amp; Shipped Projects</h2>
+          <p class="section-subtitle">Measured results, production systems, and domain-specific engineering.</p>
+        </div>
+
+        <div class="projects-container">
+
+          <!-- FEATURED PROJECT 01 (Full Width with Metrics & Chart) -->
+          <article class="project-card featured-project" aria-labelledby="proj-01-title">
+
+            <div class="project-card-top">
+              <span class="project-number">01</span>
+              <span class="category-tag tag-thesis">Thesis · Machine Learning</span>
+            </div>
+
+            <h3 id="proj-01-title" class="project-title">Customer Churn Prediction using XGBoost &amp; SHAP</h3>
+
+            <p class="project-description">
+              Built an end-to-end churn prediction pipeline on <strong>48,140 e-commerce customers</strong> (43.86%
+              churn rate) using the CRISP-DM methodology. Achieved <strong>0.929 Recall</strong> and <strong>0.979
+                ROC-AUC</strong> with XGBoost, selected after rigorous benchmarking against Random Forest. Applied
+              <strong>SHAP (TreeExplainer)</strong> for model explainability — identifying customer duration, purchase
+              frequency, and account lifespan as the dominant drivers of customer churn.
+            </p>
+
+            <div class="project-tech-stack">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">XGBoost</span>
+              <span class="tech-pill">SHAP</span>
+              <span class="tech-pill">Pandas</span>
+              <span class="tech-pill">Scikit-learn</span>
+            </div>
+
+            <!-- Signature Element: Reusable Metric Tiles -->
+            <div class="metrics-row">
+              <div class="metric-tile">
+                <span class="metric-number">0.929</span>
+                <span class="metric-label">Model Recall Score</span>
+              </div>
+              <div class="metric-tile">
+                <span class="metric-number">0.979</span>
+                <span class="metric-label">ROC-AUC Performance</span>
+              </div>
+              <div class="metric-tile">
+                <span class="metric-number">48,140</span>
+                <span class="metric-label">Customers Analyzed</span>
+              </div>
+            </div>
+
+            <!-- Real Inline SHAP Feature Importance Horizontal Bar Chart -->
+            <div class="shap-chart-container">
+              <div class="shap-chart-header">
+                <span class="shap-title">SHAP TreeExplainer · Top 3 Churn Drivers</span>
+                <span class="shap-subtitle">Mean |SHAP Value| (Impact on Model Output)</span>
+              </div>
+              <div class="shap-bars">
+                <!-- Driver 1: Customer Duration (Longest Bar) -->
+                <div class="shap-bar-item">
+                  <span class="shap-feature-name">Customer Duration</span>
+                  <div class="shap-bar-track">
+                    <div class="shap-bar-fill" data-width="100%" style="width: 0%;"></div>
+                  </div>
+                  <span class="shap-bar-val">+0.428</span>
+                </div>
+
+                <!-- Driver 2: Purchase Frequency (Medium Bar) -->
+                <div class="shap-bar-item">
+                  <span class="shap-feature-name">Purchase Frequency</span>
+                  <div class="shap-bar-track">
+                    <div class="shap-bar-fill" data-width="73.6%" style="width: 0%;"></div>
+                  </div>
+                  <span class="shap-bar-val">+0.315</span>
+                </div>
+
+                <!-- Driver 3: Account Lifespan (Short Bar) -->
+                <div class="shap-bar-item">
+                  <span class="shap-feature-name">Account Lifespan</span>
+                  <div class="shap-bar-track">
+                    <div class="shap-bar-fill" data-width="43.0%" style="width: 0%;"></div>
+                  </div>
+                  <span class="shap-bar-val">+0.184</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-links">
+              <!-- PLACEHOLDER: Replace '#' with your GitHub repository URL for this project -->
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+                <span>Source Code</span>
+              </a>
+              <!-- PLACEHOLDER: Replace '#' with detailed case study / live demo URL -->
+              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>View Detail</span>
+              </a>
+            </div>
+
+          </article>
+
+          <!-- 3-Column Secondary Projects Grid (02, 03, 04) -->
+          <div class="secondary-projects-grid">
+
+            <!-- Project 02: Data Matching & Reconciliation System -->
+            <article class="project-card" aria-labelledby="proj-02-title">
+              <div>
+                <div class="project-card-top">
+                  <span class="project-number">02</span>
+                  <span class="category-tag tag-institutional">Institutional</span>
+                </div>
+                <h3 id="proj-02-title" class="project-title">Data Matching &amp; Reconciliation System</h3>
+                <p class="project-description">
+                  Large-scale data reconciliation web app for census (PES) and registration (GB) data matching at Badan
+                  Pusat Statistik (BPS). Eliminated N+1 query bottlenecks via query restructuring and eager loading;
+                  built a PHP Traits-based audit trail system with interactive reporting dashboards and PDF/Excel
+                  export.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Laravel 12</span>
+                  <span class="tech-pill">React 18</span>
+                  <span class="tech-pill">Inertia.js</span>
+                  <span class="tech-pill">SQL Server</span>
+                  <span class="tech-pill">Chart.js</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <!-- PLACEHOLDER: Replace '#' with project code link -->
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <!-- PLACEHOLDER: Replace '#' with detail URL -->
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>View Detail</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 03: Web Scraper Management System -->
+            <article class="project-card" aria-labelledby="proj-03-title">
+              <div>
+                <div class="project-card-top">
+                  <span class="project-number">03</span>
+                  <span class="category-tag tag-institutional">Institutional</span>
+                </div>
+                <h3 id="proj-03-title" class="project-title">Web Scraper Management System</h3>
+                <p class="project-description">
+                  Monitoring dashboard for automated e-commerce data scraping operations across 6+ platforms at Badan
+                  Pusat Statistik. Built multi-stage scraping configuration with React Context API and implemented
+                  granular role-based access control (RBAC).
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Next.js 16</span>
+                  <span class="tech-pill">React 19</span>
+                  <span class="tech-pill">Tailwind CSS</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <!-- PLACEHOLDER: Replace '#' with project code link -->
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <!-- PLACEHOLDER: Replace '#' with detail URL -->
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>View Detail</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 04: Community Fee Management System -->
+            <article class="project-card" aria-labelledby="proj-04-title">
+              <div>
+                <div class="project-card-top">
+                  <span class="project-number">04</span>
+                  <span class="category-tag tag-freelance">Freelance</span>
+                </div>
+                <h3 id="proj-04-title" class="project-title">Community Fee Management System</h3>
+                <p class="project-description">
+                  Complete database architecture and full-stack application for a residential community's monthly dues
+                  collection and financial reporting. Integrated digital payment gateway to automate ledger entries and
+                  fee verification.
+                </p>
+                <div class="project-tech-stack">
+                  <span class="tech-pill">Laravel</span>
+                  <span class="tech-pill">MySQL</span>
+                  <span class="tech-pill">Payment Gateway</span>
+                </div>
+              </div>
+              <div class="project-links">
+                <!-- PLACEHOLDER: Replace '#' with project code link -->
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  <span>Source Code</span>
+                </a>
+                <!-- PLACEHOLDER: Replace '#' with detail URL -->
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>View Detail</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: TECHNICAL SKILLS ARSENAL
+         ====================================================================== -->
+    <section id="skills" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">TECHNICAL SKILLS</span>
+          <h2 class="section-title">Technical Arsenal</h2>
+          <p class="section-subtitle">Core languages, machine learning frameworks, full-stack tools, and analytics
+            platforms.</p>
+        </div>
+
+        <!-- Flat Dense Tag-Pill Grid -->
+        <div class="skills-arsenal-grid" role="list">
+          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>Python</div>
+          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>XGBoost</div>
+          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>SHAP</div>
+          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>Pandas</div>
+          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>Scikit-learn</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Laravel</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>React</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Inertia.js</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>JavaScript</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Tailwind CSS</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>MySQL</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>SQL Server</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Power BI</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Looker Studio</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Chart.js</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Git</div>
+          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>GitHub</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4: ACHIEVEMENTS & CERTIFICATIONS
+         ====================================================================== -->
+    <section id="achievements" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">ACHIEVEMENTS &amp; CERTIFICATIONS</span>
+          <h2 class="section-title">Recognition &amp; Credentials</h2>
+        </div>
+
+        <div class="achievements-grid">
+
+          <!-- Card 1: Data Mining Competition -->
+          <div class="achievement-card">
+            <div>
+              <div class="achievement-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path
+                    d="M10 14.66V17c0 .55-.45 1-1 1H7.8A1.8 1.8 0 0 0 6 19.8V22h12v-2.2c0-1-.8-1.8-1.8-1.8H15c-.55 0-1-.45-1-1v-2.34">
+                  </path>
+                  <path d="M6 4h12v5a6 6 0 0 1-12 0V4z"></path>
+                </svg>
+              </div>
+              <h3 class="achievement-title">2nd Place, Data Mining Competition</h3>
+              <p class="achievement-org">Unlimited Software Building · Universitas Gunadarma</p>
+            </div>
+            <div class="achievement-date">November 2024</div>
+          </div>
+
+          <!-- Card 2: KJMU Full Scholarship -->
+          <div class="achievement-card">
+            <div>
+              <div class="achievement-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3 class="achievement-title">KJMU Full Scholarship Recipient</h3>
+              <p class="achievement-org">DKI Jakarta Provincial Government</p>
+            </div>
+            <div class="achievement-date">2022 – 2026</div>
+          </div>
+
+          <!-- Card 3: BNSP Certification -->
+          <div class="achievement-card">
+            <div>
+              <div class="achievement-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <h3 class="achievement-title">BNSP Data Analyst Certification</h3>
+              <p class="achievement-org">Certified Competent (Kompeten) · National Professional Certification Board</p>
+            </div>
+            <div class="achievement-date">2026</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: EDUCATION
+         ====================================================================== -->
+    <section id="education" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">EDUCATION</span>
+          <h2 class="section-title">Academic Background</h2>
+        </div>
+
+        <div class="education-card">
+          <div class="education-info-left">
+            <h3 class="education-school">Universitas Gunadarma</h3>
+            <p class="education-degree">Bachelor of Computer Science (B.CS) in Information Systems</p>
+          </div>
+          <div class="education-badges">
+            <div class="gpa-tile">
+              <div class="gpa-num">3.96 / 4.00</div>
+              <div class="gpa-label">Cumulative GPA</div>
+            </div>
+            <span class="honors-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+              Cumlaude · Dean's List
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: CONTACT
+         ====================================================================== -->
+    <section id="contact" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">CONTACT</span>
+          <h2 class="section-title">Let's Work Together.</h2>
+          <p class="section-subtitle">Open to full-time roles, freelance projects, or just talking data and code.</p>
+        </div>
+
+        <!-- Button-Style Contact Cards Grid -->
+        <div class="contact-grid">
+
+          <!-- Email Card -->
+          <a href="mailto:ibrahimilham.166@gmail.com" class="contact-card"
+            aria-label="Send email to ibrahimilham.166@gmail.com">
+            <div class="contact-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-meta">
+              <span class="contact-label">Email Direct</span>
+              <span class="contact-value">ibrahimilham.166@gmail.com</span>
+            </div>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://linkedin.com/in/m-ibrahim-ilham" class="contact-card" target="_blank"
+            rel="noopener noreferrer" aria-label="View LinkedIn Profile">
+            <div class="contact-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
+            <div class="contact-meta">
+              <span class="contact-label">LinkedIn Network</span>
+              <span class="contact-value">in/m-ibrahim-ilham</span>
+            </div>
+          </a>
+
+          <!-- GitHub Card -->
+          <!-- PLACEHOLDER: Replace 'https://github.com/[username]' with your actual GitHub profile URL -->
+          <a href="https://github.com/" class="contact-card" target="_blank" rel="noopener noreferrer"
+            aria-label="View GitHub Profile">
+            <div class="contact-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+            </div>
+            <div class="contact-meta">
+              <span class="contact-label">GitHub Repositories</span>
+              <span class="contact-value">github.com/ibrahim</span>
+            </div>
+          </a>
+
+          <!-- OPTIONAL WHATSAPP CONTACT: Uncomment the block below if you wish to make your phone number publicly accessible
+          <a href="https://wa.me/6289637605978" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <div class="contact-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </div>
+            <div class="contact-meta">
+              <span class="contact-label">WhatsApp Direct</span>
+              <span class="contact-value">+62 896 3760 5978</span>
+            </div>
+          </a>
+          -->
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-copy">
+        <span>Designed &amp; Built by M. Ibrahim Ilham &middot; <span id="current-year">2026</span></span>
+      </div>
+      <div>
+        <a href="#hero" class="footer-back-to-top">
+          <span>Back to top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript File -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
