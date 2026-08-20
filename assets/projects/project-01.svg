@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="green-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="chart-area" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="450" fill="url(#bg-grad-1)" rx="12" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g stroke="#334155" stroke-width="0.75" opacity="0.4" stroke-dasharray="4 4">
+    <line x1="40" y1="40" x2="760" y2="40" />
+    <line x1="40" y1="120" x2="760" y2="120" />
+    <line x1="40" y1="200" x2="760" y2="200" />
+    <line x1="40" y1="280" x2="760" y2="280" />
+    <line x1="40" y1="360" x2="760" y2="360" />
+    <line x1="160" y1="40" x2="160" y2="410" />
+    <line x1="320" y1="40" x2="320" y2="410" />
+    <line x1="480" y1="40" x2="480" y2="410" />
+    <line x1="640" y1="40" x2="640" y2="410" />
+  </g>
+
+  <!-- Top App Window Header -->
+  <rect x="40" y="30" width="720" height="44" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <circle cx="65" cy="52" r="5" fill="#EF4444" />
+  <circle cx="82" cy="52" r="5" fill="#F59E0B" />
+  <circle cx="99" cy="52" r="5" fill="#10B981" />
+  <text x="125" y="56" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">CRISP-DM · Churn Prediction ML Model Pipeline &amp; SHAP Studio</text>
+  <rect x="620" y="42" width="120" height="20" rx="4" fill="#0F172A" stroke="#334155" stroke-width="1" />
+  <text x="635" y="56" fill="#38BDF8" font-family="'Courier New', monospace" font-size="10" font-weight="bold">XGBoost v2.1</text>
+
+  <!-- Left Card: Metric Summary -->
+  <rect x="40" y="90" width="220" height="150" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <text x="60" y="118" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="600">MODEL RECALL</text>
+  <text x="60" y="155" fill="#10B981" font-family="sans-serif" font-size="32" font-weight="800">0.929</text>
+  <text x="60" y="180" fill="#64748B" font-family="sans-serif" font-size="11">Benchmark ROC-AUC: <tspan fill="#38BDF8" font-weight="bold">0.979</tspan></text>
+  <rect x="60" y="198" width="180" height="6" rx="3" fill="#334155" />
+  <rect x="60" y="198" width="168" height="6" rx="3" fill="url(#green-grad)" />
+  <text x="60" y="222" fill="#94A3B8" font-family="sans-serif" font-size="10">Class Imbalance: SMOTE Balanced</text>
+
+  <!-- Left Bottom Card: SHAP Feature Dominance -->
+  <rect x="40" y="255" width="220" height="165" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <text x="60" y="280" fill="#94A3B8" font-family="sans-serif" font-size="11" font-weight="700">SHAP GLOBAL DRIVERS</text>
+  
+  <text x="60" y="306" fill="#CBD5E1" font-family="sans-serif" font-size="11">1. Customer Duration</text>
+  <rect x="60" y="314" width="180" height="6" rx="3" fill="#334155" />
+  <rect x="60" y="314" width="180" height="6" rx="3" fill="#3B82F6" />
+
+  <text x="60" y="344" fill="#CBD5E1" font-family="sans-serif" font-size="11">2. Purchase Frequency</text>
+  <rect x="60" y="352" width="180" height="6" rx="3" fill="#334155" />
+  <rect x="60" y="352" width="132" height="6" rx="3" fill="#38BDF8" />
+
+  <text x="60" y="382" fill="#CBD5E1" font-family="sans-serif" font-size="11">3. Account Lifespan</text>
+  <rect x="60" y="390" width="180" height="6" rx="3" fill="#334155" />
+  <rect x="60" y="390" width="78" height="6" rx="3" fill="#818CF8" />
+
+  <!-- Right Big Card: ROC Curve & Decision Boundary -->
+  <rect x="275" y="90" width="485" height="330" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <text x="300" y="122" fill="#F8FAFC" font-family="sans-serif" font-size="14" font-weight="700">ROC-AUC Performance &amp; Classification Boundary</text>
+  <text x="300" y="142" fill="#94A3B8" font-family="sans-serif" font-size="11">48,140 Customer Records · 10-Fold Stratified Validation</text>
+
+  <!-- ROC Chart Area Grid -->
+  <rect x="310" y="165" width="420" height="200" fill="#0F172A" rx="6" stroke="#334155" stroke-width="1" />
+  <line x1="310" y1="365" x2="730" y2="165" stroke="#475569" stroke-width="1" stroke-dasharray="4 4" />
+  
+  <!-- ROC Curve fill -->
+  <path d="M 310 365 C 320 200, 360 175, 730 165 L 730 365 Z" fill="url(#chart-area)" />
+  <path d="M 310 365 C 320 200, 360 175, 730 165" fill="none" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- Interactive Data Points -->
+  <circle cx="360" cy="188" r="5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2" />
+  <circle cx="480" cy="173" r="5" fill="#10B981" stroke="#FFFFFF" stroke-width="2" />
+  <circle cx="620" cy="168" r="5" fill="#38BDF8" stroke="#FFFFFF" stroke-width="2" />
+
+  <!-- Badge in Chart -->
+  <rect x="330" y="180" width="130" height="32" rx="4" fill="rgba(15, 23, 42, 0.85)" stroke="#38BDF8" stroke-width="1" />
+  <text x="340" y="200" fill="#38BDF8" font-family="sans-serif" font-size="11" font-weight="700">ROC-AUC: 0.979</text>
+
+  <rect x="560" y="310" width="150" height="40" rx="4" fill="rgba(15, 23, 42, 0.9)" stroke="#10B981" stroke-width="1" />
+  <text x="572" y="327" fill="#10B981" font-family="sans-serif" font-size="10" font-weight="700">✓ OPTIMAL THRESHOLD</text>
+  <text x="572" y="342" fill="#94A3B8" font-family="sans-serif" font-size="9">Recall 92.9% · Precision 89.4%</text>
+
+  <!-- Bottom Bar Info -->
+  <text x="310" y="390" fill="#64748B" font-family="sans-serif" font-size="11">False Positive Rate (1 - Specificity)</text>
+  <text x="635" y="390" fill="#64748B" font-family="sans-serif" font-size="11">True Positive Rate (Sensitivity)</text>
+</svg>

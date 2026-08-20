@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-p2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg-p2)" rx="12" />
+
+  <!-- App Bar -->
+  <rect x="40" y="30" width="720" height="44" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <circle cx="65" cy="52" r="5" fill="#EF4444" />
+  <circle cx="82" cy="52" r="5" fill="#F59E0B" />
+  <circle cx="99" cy="52" r="5" fill="#10B981" />
+  <text x="125" y="56" fill="#94A3B8" font-family="sans-serif" font-size="12" font-weight="600">Badan Pusat Statistik · PES &amp; GB Data Matching Portal</text>
+  <rect x="630" y="42" width="110" height="20" rx="4" fill="#0F172A" stroke="#334155" stroke-width="1" />
+  <text x="642" y="56" fill="#10B981" font-family="monospace" font-size="10" font-weight="bold">● LIVE ENGINE</text>
+
+  <!-- Left Sidebar Mock -->
+  <rect x="40" y="90" width="180" height="330" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <text x="55" y="120" fill="#64748B" font-family="sans-serif" font-size="10" font-weight="700">MODULES</text>
+  <rect x="50" y="132" width="160" height="30" rx="6" fill="#2563EB" />
+  <text x="65" y="152" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="600">📊 Data Reconciliation</text>
+  <rect x="50" y="170" width="160" height="30" rx="6" fill="transparent" />
+  <text x="65" y="190" fill="#94A3B8" font-family="sans-serif" font-size="11">🔍 Audit Trail Logs</text>
+  <rect x="50" y="208" width="160" height="30" rx="6" fill="transparent" />
+  <text x="65" y="228" fill="#94A3B8" font-family="sans-serif" font-size="11">📑 Export PDF/Excel</text>
+
+  <rect x="50" y="280" width="160" height="120" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+  <text x="62" y="304" fill="#38BDF8" font-family="sans-serif" font-size="10" font-weight="700">N+1 QUERY FIX</text>
+  <text x="62" y="328" fill="#10B981" font-family="sans-serif" font-size="18" font-weight="800">-70% Latency</text>
+  <text x="62" y="348" fill="#94A3B8" font-family="sans-serif" font-size="10">Eager Loading + Index</text>
+  <text x="62" y="380" fill="#64748B" font-family="monospace" font-size="9">10k+ rows/sec</text>
+
+  <!-- Right Table Mockup -->
+  <rect x="235" y="90" width="525" height="330" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+  <text x="255" y="122" fill="#F8FAFC" font-family="sans-serif" font-size="13" font-weight="700">Matched Census Records vs Civil Registry (GB)</text>
+
+  <!-- Table Header -->
+  <rect x="255" y="145" width="485" height="32" rx="4" fill="#0F172A" />
+  <text x="270" y="166" fill="#94A3B8" font-family="sans-serif" font-size="11" font-weight="600">ID / NIK</text>
+  <text x="360" y="166" fill="#94A3B8" font-family="sans-serif" font-size="11" font-weight="600">PES NAME</text>
+  <text x="490" y="166" fill="#94A3B8" font-family="sans-serif" font-size="11" font-weight="600">GB REGISTRATION</text>
+  <text x="640" y="166" fill="#94A3B8" font-family="sans-serif" font-size="11" font-weight="600">MATCH STATUS</text>
+
+  <!-- Table Rows -->
+  <line x1="255" y1="215" x2="740" y2="215" stroke="#334155" stroke-width="1" />
+  <text x="270" y="200" fill="#CBD5E1" font-family="monospace" font-size="11">320401829301</text>
+  <text x="360" y="200" fill="#CBD5E1" font-family="sans-serif" font-size="11">Ahmad Subagyo</text>
+  <text x="490" y="200" fill="#CBD5E1" font-family="sans-serif" font-size="11">Ahmad Subagyo</text>
+  <rect x="635" y="186" width="90" height="20" rx="4" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1" />
+  <text x="646" y="200" fill="#10B981" font-family="sans-serif" font-size="10" font-weight="bold">✓ 100% MATCH</text>
+
+  <line x1="255" y1="255" x2="740" y2="255" stroke="#334155" stroke-width="1" />
+  <text x="270" y="240" fill="#CBD5E1" font-family="monospace" font-size="11">320401948210</text>
+  <text x="360" y="240" fill="#CBD5E1" font-family="sans-serif" font-size="11">Siti Nurhaliza</text>
+  <text x="490" y="240" fill="#CBD5E1" font-family="sans-serif" font-size="11">Siti Nur Haliza</text>
+  <rect x="635" y="226" width="90" height="20" rx="4" fill="rgba(245, 158, 11, 0.2)" stroke="#F59E0B" stroke-width="1" />
+  <text x="643" y="240" fill="#F59E0B" font-family="sans-serif" font-size="10" font-weight="bold">⚡ FUZZY 96%</text>
+
+  <line x1="255" y1="295" x2="740" y2="295" stroke="#334155" stroke-width="1" />
+  <text x="270" y="280" fill="#CBD5E1" font-family="monospace" font-size="11">320401773918</text>
+  <text x="360" y="280" fill="#CBD5E1" font-family="sans-serif" font-size="11">Budi Setiawan</text>
+  <text x="490" y="280" fill="#CBD5E1" font-family="sans-serif" font-size="11">Budi Setiawan</text>
+  <rect x="635" y="266" width="90" height="20" rx="4" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1" />
+  <text x="646" y="280" fill="#10B981" font-family="sans-serif" font-size="10" font-weight="bold">✓ 100% MATCH</text>
+
+  <line x1="255" y1="335" x2="740" y2="335" stroke="#334155" stroke-width="1" />
+  <text x="270" y="320" fill="#CBD5E1" font-family="monospace" font-size="11">320401889922</text>
+  <text x="360" y="320" fill="#CBD5E1" font-family="sans-serif" font-size="11">Dewi Lestari</text>
+  <text x="490" y="320" fill="#CBD5E1" font-family="sans-serif" font-size="11">Dewi Anggraeni</text>
+  <rect x="635" y="306" width="90" height="20" rx="4" fill="rgba(239, 68, 68, 0.2)" stroke="#EF4444" stroke-width="1" />
+  <text x="646" y="320" fill="#EF4444" font-family="sans-serif" font-size="10" font-weight="bold">✕ DISCREPANCY</text>
+
+  <!-- Summary Footer -->
+  <rect x="255" y="360" width="485" height="42" rx="6" fill="#0F172A" />
+  <text x="275" y="386" fill="#94A3B8" font-family="sans-serif" font-size="11">Audited: <tspan fill="#FFFFFF" font-weight="bold">42,890 Records</tspan></text>
+  <text x="470" y="386" fill="#10B981" font-family="sans-serif" font-size="11">Matched: 98.4%</text>
+  <text x="620" y="386" fill="#38BDF8" font-family="sans-serif" font-size="11">PHP Audit Trait: Active</text>
+</svg>

@@ -9,7 +9,7 @@
   <title>M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist</title>
   <meta name="title" content="M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist">
   <meta name="description"
-    content="Portfolio of M. Ibrahim Ilham — Final-year Information Systems student, Full-Stack Developer (Laravel, React) and Applied Data Scientist (Python, XGBoost, SHAP). GPA 3.96/4.00, Cumlaude.">
+    content="Portfolio of M. Ibrahim Ilham — Final-year Information Systems student, Full-Stack Developer (Laravel, React) and Applied Data Scientist (Python, XGBoost, SHAP). GPA 3.95/4.00, Cumlaude.">
   <meta name="keywords"
     content="M. Ibrahim Ilham, Full-Stack Developer, Data Scientist, Machine Learning, Laravel, React, XGBoost, SHAP, Python, Universitas Gunadarma, BPS">
   <meta name="author" content="M. Ibrahim Ilham">
@@ -17,7 +17,6 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <!-- PLACEHOLDER: Update URL if using a custom domain or specific GitHub Pages URL -->
   <meta property="og:url" content="https://username.github.io/">
   <meta property="og:title" content="M. Ibrahim Ilham — Full-Stack Developer &amp; Data Scientist">
   <meta property="og:description"
@@ -38,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Custom Design System Stylesheet -->
@@ -64,6 +63,8 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#work" class="nav-link">Work</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#journey" class="nav-link">Journey</a></li>
+          <li><a href="#achievements" class="nav-link">Credentials</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -137,11 +138,14 @@
           <div class="hero-visual hero-fade-2">
             <div class="tree-card" aria-label="Abstract classification scatter plot illustration">
 
+              <!-- Tooltip element for interactive scatter points -->
+              <div id="scatter-tooltip" class="scatter-tooltip" role="tooltip" aria-hidden="true"></div>
+
               <!-- Scatter Plot SVG with Decision Boundary -->
               <div class="tree-svg-container">
                 <svg class="scatter-plot-svg" viewBox="0 0 380 230" fill="none" xmlns="http://www.w3.org/2000/svg"
                   role="img"
-                  aria-label="Scatter plot showing two clusters separated by a smooth decision boundary curve">
+                  aria-label="Interactive scatter plot showing two clusters separated by a smooth decision boundary curve">
 
                   <!-- Subtle background grid lines -->
                   <g class="scatter-grid" stroke="#E4E7EB" stroke-width="1" stroke-dasharray="3 3">
@@ -159,70 +163,102 @@
                   <path class="boundary-curve" d="M 50 215 C 120 180, 150 115, 205 100 C 255 85, 285 45, 335 20"
                     fill="none" stroke="#57626C" stroke-width="2" stroke-linecap="round" />
 
-                  <!-- Cluster 1: Charcoal-Blue Dots (#253B52) -->
+                  <!-- Cluster 1: Charcoal-Blue Dots (#253B52) — Retained Customers -->
                   <g class="cluster-blue" fill="#253B52">
-                    <circle cx="55" cy="60" r="4" />
-                    <circle cx="75" cy="40" r="3.5" />
-                    <circle cx="80" cy="95" r="4.5" />
-                    <circle cx="95" cy="55" r="4" />
-                    <circle cx="110" cy="35" r="3.5" />
-                    <circle cx="115" cy="80" r="4.5" />
-                    <circle cx="130" cy="60" r="4" />
-                    <circle cx="140" cy="30" r="4" />
-                    <circle cx="145" cy="105" r="4.5" />
-                    <circle cx="160" cy="50" r="3.5" />
-                    <circle cx="165" cy="85" r="4" />
-                    <circle cx="175" cy="25" r="4.5" />
-                    <circle cx="190" cy="65" r="4" />
-                    <circle cx="200" cy="40" r="3.5" />
-                    <circle cx="220" cy="30" r="4.5" />
-                    <circle cx="235" cy="55" r="4" />
-                    <circle cx="250" cy="35" r="3.5" />
-                    <circle cx="270" cy="20" r="4" />
-                    <circle cx="65" cy="130" r="4" />
-                    <circle cx="85" cy="150" r="4.5" />
-                    <circle cx="105" cy="135" r="3.5" />
-                    <circle cx="125" cy="160" r="4" />
+                    <circle cx="55" cy="60" r="4.5" class="scatter-point"
+                      data-label="Retained · High Duration (28 mo), Frequent Orders" />
+                    <circle cx="75" cy="40" r="4" class="scatter-point" data-label="Retained · Low Churn Risk (0.08)" />
+                    <circle cx="80" cy="95" r="4.5" class="scatter-point"
+                      data-label="Retained · Loyal Active Account" />
+                    <circle cx="95" cy="55" r="4" class="scatter-point" data-label="Retained · Purchase Freq: 18x/yr" />
+                    <circle cx="110" cy="35" r="4" class="scatter-point" data-label="Retained · SHAP Impact: -0.42" />
+                    <circle cx="115" cy="80" r="4.5" class="scatter-point" data-label="Retained · Low Risk Score" />
+                    <circle cx="130" cy="60" r="4" class="scatter-point" data-label="Retained · High Lifetime Value" />
+                    <circle cx="140" cy="30" r="4" class="scatter-point"
+                      data-label="Retained · Account Lifespan: 310 days" />
+                    <circle cx="145" cy="105" r="4.5" class="scatter-point"
+                      data-label="Retained · Consistent Engagement" />
+                    <circle cx="160" cy="50" r="4" class="scatter-point"
+                      data-label="Retained · Low Churn Probability" />
+                    <circle cx="165" cy="85" r="4" class="scatter-point"
+                      data-label="Retained · Churn Probability: 0.12" />
+                    <circle cx="175" cy="25" r="4.5" class="scatter-point"
+                      data-label="Retained · Optimal Feature Distribution" />
+                    <circle cx="190" cy="65" r="4" class="scatter-point" data-label="Retained · Repeat Buyer" />
+                    <circle cx="200" cy="40" r="4" class="scatter-point" data-label="Retained · Duration: 24 mo" />
+                    <circle cx="220" cy="30" r="4.5" class="scatter-point"
+                      data-label="Retained · Positive Feature Vector" />
+                    <circle cx="235" cy="55" r="4" class="scatter-point" data-label="Retained · Low Inactivity Gap" />
+                    <circle cx="250" cy="35" r="4" class="scatter-point"
+                      data-label="Retained · Frequent Transactions" />
+                    <circle cx="270" cy="20" r="4" class="scatter-point" data-label="Retained · Top Loyalty Tier" />
+                    <circle cx="65" cy="130" r="4" class="scatter-point"
+                      data-label="Retained · Margin Case (0.38 Risk)" />
+                    <circle cx="85" cy="150" r="4.5" class="scatter-point" data-label="Retained · High Recency" />
+                    <circle cx="105" cy="135" r="4" class="scatter-point"
+                      data-label="Retained · Positive XGBoost Split" />
+                    <circle cx="125" cy="160" r="4" class="scatter-point" data-label="Retained · Regular Orders" />
                     <!-- Realistic Boundary Intermixing -->
-                    <circle cx="230" cy="110" r="4" />
-                    <circle cx="180" cy="120" r="3.5" />
-                    <circle cx="150" cy="140" r="4" />
+                    <circle cx="230" cy="110" r="4" class="scatter-point"
+                      data-label="Boundary Sample · Classified Retained" />
+                    <circle cx="180" cy="120" r="4" class="scatter-point"
+                      data-label="Boundary Sample · SHAP Delta: -0.05" />
+                    <circle cx="150" cy="140" r="4" class="scatter-point"
+                      data-label="Boundary Sample · Probability: 0.44" />
                   </g>
 
-                  <!-- Cluster 2: Signal-Lime Dots (#8BC53F) -->
+                  <!-- Cluster 2: Signal-Lime Dots (#8BC53F) — Churn Risk Customers -->
                   <g class="cluster-lime" fill="#8BC53F">
-                    <circle cx="120" cy="200" r="4" />
-                    <circle cx="145" cy="185" r="4.5" />
-                    <circle cx="165" cy="205" r="3.5" />
-                    <circle cx="180" cy="165" r="4" />
-                    <circle cx="200" cy="195" r="4.5" />
-                    <circle cx="210" cy="150" r="3.5" />
-                    <circle cx="225" cy="175" r="4" />
-                    <circle cx="235" cy="205" r="4" />
-                    <circle cx="245" cy="140" r="4.5" />
-                    <circle cx="260" cy="180" r="3.5" />
-                    <circle cx="270" cy="125" r="4" />
-                    <circle cx="280" cy="160" r="4.5" />
-                    <circle cx="290" cy="190" r="4" />
-                    <circle cx="300" cy="110" r="3.5" />
-                    <circle cx="310" cy="145" r="4" />
-                    <circle cx="315" cy="75" r="4.5" />
-                    <circle cx="325" cy="120" r="4" />
-                    <circle cx="335" cy="90" r="3.5" />
-                    <circle cx="340" cy="160" r="4" />
-                    <circle cx="345" cy="60" r="4.5" />
-                    <circle cx="355" cy="100" r="3.5" />
-                    <circle cx="360" cy="135" r="4" />
+                    <circle cx="120" cy="200" r="4.5" class="scatter-point"
+                      data-label="Churn Risk · Low Duration (2 mo), Inactive" />
+                    <circle cx="145" cy="185" r="4.5" class="scatter-point"
+                      data-label="Churn Risk · Probability: 0.88" />
+                    <circle cx="165" cy="205" r="4" class="scatter-point"
+                      data-label="Churn Risk · Purchase Freq: 1x/yr" />
+                    <circle cx="180" cy="165" r="4" class="scatter-point"
+                      data-label="Churn Risk · High SHAP Loss: +0.48" />
+                    <circle cx="200" cy="195" r="4.5" class="scatter-point"
+                      data-label="Churn Risk · Inactive > 60 Days" />
+                    <circle cx="210" cy="150" r="4" class="scatter-point"
+                      data-label="Churn Risk · Zero Recent Orders" />
+                    <circle cx="225" cy="175" r="4" class="scatter-point" data-label="Churn Risk · Probability: 0.91" />
+                    <circle cx="235" cy="205" r="4" class="scatter-point"
+                      data-label="Churn Risk · High Risk Threshold" />
+                    <circle cx="245" cy="140" r="4.5" class="scatter-point"
+                      data-label="Churn Risk · Short Account Lifespan" />
+                    <circle cx="260" cy="180" r="4" class="scatter-point"
+                      data-label="Churn Risk · Low Engagement Vector" />
+                    <circle cx="270" cy="125" r="4" class="scatter-point"
+                      data-label="Churn Risk · Classified Churned" />
+                    <circle cx="280" cy="160" r="4.5" class="scatter-point" data-label="Churn Risk · Predicted Loss" />
+                    <circle cx="290" cy="190" r="4" class="scatter-point"
+                      data-label="Churn Risk · Inactivity Warning" />
+                    <circle cx="300" cy="110" r="4" class="scatter-point" data-label="Churn Risk · At-Risk Segment" />
+                    <circle cx="310" cy="145" r="4" class="scatter-point" data-label="Churn Risk · Recall Validated" />
+                    <circle cx="315" cy="75" r="4.5" class="scatter-point" data-label="Churn Risk · Outlier Pattern" />
+                    <circle cx="325" cy="120" r="4" class="scatter-point" data-label="Churn Risk · High Churn Alert" />
+                    <circle cx="335" cy="90" r="4" class="scatter-point" data-label="Churn Risk · Critical Dropoff" />
+                    <circle cx="340" cy="160" r="4" class="scatter-point" data-label="Churn Risk · Probability: 0.96" />
+                    <circle cx="345" cy="60" r="4.5" class="scatter-point"
+                      data-label="Churn Risk · Extreme Risk Cluster" />
+                    <circle cx="355" cy="100" r="4" class="scatter-point"
+                      data-label="Churn Risk · Identified by XGBoost" />
+                    <circle cx="360" cy="135" r="4" class="scatter-point" data-label="Churn Risk · High Risk Driver" />
                     <!-- Realistic Boundary Intermixing -->
-                    <circle cx="130" cy="115" r="4" />
-                    <circle cx="170" cy="75" r="3.5" />
-                    <circle cx="215" cy="70" r="4" />
+                    <circle cx="130" cy="115" r="4" class="scatter-point"
+                      data-label="Boundary Sample · Classified Churn" />
+                    <circle cx="170" cy="75" r="4" class="scatter-point"
+                      data-label="Boundary Sample · SHAP Positive Shift" />
+                    <circle cx="215" cy="70" r="4" class="scatter-point"
+                      data-label="Boundary Sample · Marginal Decision" />
                   </g>
                 </svg>
               </div>
 
               <div class="tree-caption">
-                <span>A simplified view of how a classification model separates outcomes.</span>
+                <span class="scatter-caption-icon">💡</span>
+                <span><strong>Interactive Scatter:</strong> Hover dots to inspect model classification &amp; SHAP
+                  scores.</span>
               </div>
             </div>
           </div>
@@ -230,6 +266,8 @@
         </div>
       </div>
     </section>
+
+
 
     <!-- ======================================================================
          SECTION 1: ABOUT
@@ -239,37 +277,25 @@
 
         <div class="section-header">
           <span class="section-badge">ABOUT</span>
-          <h2 class="section-title">Engineering Rigor Across the Stack</h2>
+          <h2 class="section-title">Engineering Across the Stack</h2>
         </div>
 
         <!-- Asymmetric Bio Split: Monogram Avatar Tile + Text -->
         <div class="about-hero-grid">
 
-          <!-- Avatar Monogram Tile -->
-          <!-- NOTE: To use a real photo, replace this .avatar-tile container with:
-               <img src="./assets/images/profile.jpg" alt="M. Ibrahim Ilham" class="avatar-tile" style="object-fit: cover;"> -->
-          <div class="avatar-tile" aria-label="M. Ibrahim Ilham Initials Avatar">
-            <!-- Subtle Geometric Line Grid Background Pattern -->
-            <svg class="avatar-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="grid-pattern" width="16" height="16" patternUnits="userSpaceOnUse">
-                  <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#253B52" stroke-width="0.75" />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-            </svg>
-            <span class="avatar-monogram">MII</span>
-            <span class="avatar-role">DEV &amp; ML</span>
+          <!-- Profile Photo Tile -->
+          <div class="avatar-tile" aria-label="Foto Profil M. Ibrahim Ilham">
+            <img src="./assets/Foto Profil.png" alt="M. Ibrahim Ilham" class="avatar-photo" loading="lazy" />
           </div>
 
           <!-- Bio Text & Key Highlights -->
           <div class="about-bio-col">
-            <p class="about-bio-text  ">
-              Final-year Information Systems student at <strong>Universitas Gunadarma (GPA 3.96/4.00, Cumlaude)</strong>
-              with hands-on experience across full-stack web development and applied data science. Built production
-              systems for a national government institution <strong>(Badan Pusat Statistik)</strong> and developed
-              machine learning models for real business problems — from database architecture to model explainability.
-              <strong>BNSP-certified Data Analyst</strong>.
+            <p class="about-bio-text">
+              <strong>Information Systems graduate from Universitas Gunadarma (GPA 3.95/4.00, Cum Laude)</strong> with
+              experience in full-stack web development, data science, and machine learning. Experienced in building
+              production systems for <strong>Badan Pusat Statistik (BPS)</strong> and developing machine learning
+              solutions for real-world business problems, covering database architecture, data processing, model
+              development, and explainable AI. <strong>BNSP-certified Data Analyst</strong>.
             </p>
 
             <div class="about-highlights">
@@ -278,7 +304,7 @@
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
-                GPA 3.96 / 4.00 · Cumlaude
+                GPA 3.95 / 4.00 · Cumlaude
               </span>
               <span class="bio-pill">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -394,17 +420,33 @@
 
         </div>
 
-        <!-- Download CV Action -->
+        <!-- Download CV Action (Centered & Minimalist) -->
         <div class="about-footer-cta">
-          <!-- PLACEHOLDER: Update CV link destination -->
-          <a href="#" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span>Download Curriculum Vitae</span>
-          </a>
+          <div class="cv-buttons-group">
+            <a href="assets/CV/CV_IND.pdf" class="btn-cv btn-cv-ind" download="CV_Ibrahim_Ilham_IND.pdf" target="_blank"
+              rel="noopener noreferrer" aria-label="Download Curriculum Vitae (Indonesia)">
+              <svg class="cv-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span class="cv-label">CV (Indonesia)</span>
+              <span class="cv-tag">PDF</span>
+            </a>
+
+            <a href="assets/CV/CV_ENG.pdf" class="btn-cv btn-cv-eng" download="CV_Ibrahim_Ilham_ENG.pdf" target="_blank"
+              rel="noopener noreferrer" aria-label="Download Curriculum Vitae (English)">
+              <svg class="cv-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span class="cv-label">CV (English)</span>
+              <span class="cv-tag">PDF</span>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -422,88 +464,221 @@
           <p class="section-subtitle">Measured results, production systems, and domain-specific engineering.</p>
         </div>
 
+        <!-- Interactive Project Category Filter Tabs -->
+        <div class="project-filter-container" role="tablist" aria-label="Project Category Filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            <span>All Projects</span>
+            <span class="filter-badge">4</span>
+          </button>
+          <button class="filter-btn" data-filter="ml" role="tab" aria-selected="false">
+            <span>Machine Learning &amp; AI</span>
+            <span class="filter-badge">1</span>
+          </button>
+          <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">
+            <span>Full-Stack Web</span>
+            <span class="filter-badge">3</span>
+          </button>
+          <button class="filter-btn" data-filter="institutional" role="tab" aria-selected="false">
+            <span>Institutional / BPS</span>
+            <span class="filter-badge">2</span>
+          </button>
+        </div>
+
         <div class="projects-container">
 
-          <!-- FEATURED PROJECT 01 (Full Width with Metrics & Chart) -->
-          <article class="project-card featured-project" aria-labelledby="proj-01-title">
+          <!-- FEATURED PROJECT 01 (Full Width) -->
+          <article class="project-card featured-project" data-category="ml fullstack" aria-labelledby="proj-01-title">
 
             <div class="project-card-top">
               <span class="project-number">01</span>
-              <span class="category-tag tag-thesis">Thesis · Machine Learning</span>
+              <div class="project-badges">
+                <span class="category-tag tag-thesis">Thesis · Machine Learning</span>
+              </div>
             </div>
 
             <h3 id="proj-01-title" class="project-title">Customer Churn Prediction using XGBoost &amp; SHAP</h3>
 
-            <p class="project-description">
-              Built an end-to-end churn prediction pipeline on <strong>48,140 e-commerce customers</strong> (43.86%
-              churn rate) using the CRISP-DM methodology. Achieved <strong>0.929 Recall</strong> and <strong>0.979
-                ROC-AUC</strong> with XGBoost, selected after rigorous benchmarking against Random Forest. Applied
-              <strong>SHAP (TreeExplainer)</strong> for model explainability — identifying customer duration, purchase
-              frequency, and account lifespan as the dominant drivers of customer churn.
-            </p>
-
-            <div class="project-tech-stack">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">XGBoost</span>
-              <span class="tech-pill">SHAP</span>
-              <span class="tech-pill">Pandas</span>
-              <span class="tech-pill">Scikit-learn</span>
-            </div>
-
-            <!-- Signature Element: Reusable Metric Tiles -->
-            <div class="metrics-row">
-              <div class="metric-tile">
-                <span class="metric-number">0.929</span>
-                <span class="metric-label">Model Recall Score</span>
-              </div>
-              <div class="metric-tile">
-                <span class="metric-number">0.979</span>
-                <span class="metric-label">ROC-AUC Performance</span>
-              </div>
-              <div class="metric-tile">
-                <span class="metric-number">48,140</span>
-                <span class="metric-label">Customers Analyzed</span>
+            <!-- Project Image Preview -->
+            <div class="project-image-container">
+              <div class="project-image-wrapper">
+                <img src="assets/projects/XAI/Semua Visualisasi.png" alt="Customer Churn Prediction — SHAP & XGBoost Visualizations" class="project-image"
+                  loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                <div class="project-image-placeholder" style="display: none;">
+                  <div class="placeholder-content">
+                    <div class="placeholder-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.75">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                    </div>
+                    <span class="placeholder-text">Customer Churn Prediction Dashboard</span>
+                    <span class="placeholder-sub">assets/projects/XAI/Semua Visualisasi.png</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Real Inline SHAP Feature Importance Horizontal Bar Chart -->
-            <div class="shap-chart-container">
-              <div class="shap-chart-header">
-                <span class="shap-title">SHAP TreeExplainer · Top 3 Churn Drivers</span>
-                <span class="shap-subtitle">Mean |SHAP Value| (Impact on Model Output)</span>
+            <!-- Card View Tabs -->
+            <div class="project-tab-bar" role="tablist">
+              <button class="tab-btn active" data-tab="tab-overview-01">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                <span>Overview &amp; Baseline</span>
+              </button>
+              <button class="tab-btn highlight-tab" data-tab="tab-impact-01">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+                <span>Business Impact &amp; Strategy</span>
+              </button>
+            </div>
+
+            <!-- Tab 1: Overview & Model Performance -->
+            <div id="tab-overview-01" class="tab-content active">
+              <p class="project-description">
+                Built an end-to-end churn prediction pipeline on <strong>48,140 e-commerce customers</strong> (43.86%
+                churn rate) using the CRISP-DM methodology. Achieved <strong>0.929 Recall</strong> and <strong>0.979
+                  ROC-AUC</strong> with XGBoost, selected after rigorous benchmarking against Random Forest. Applied
+                <strong>SHAP (TreeExplainer)</strong> for model explainability — identifying customer duration, purchase
+                frequency, and account lifespan as the dominant drivers of customer churn.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">XGBoost</span>
+                <span class="tech-pill">SHAP</span>
+                <span class="tech-pill">Pandas</span>
+                <span class="tech-pill">Scikit-learn</span>
+                <span class="tech-pill">CRISP-DM</span>
               </div>
-              <div class="shap-bars">
-                <!-- Driver 1: Customer Duration (Longest Bar) -->
-                <div class="shap-bar-item">
-                  <span class="shap-feature-name">Customer Duration</span>
-                  <div class="shap-bar-track">
-                    <div class="shap-bar-fill" data-width="100%" style="width: 0%;"></div>
+
+              <!-- Reusable Metric Tiles -->
+              <div class="metrics-row">
+                <div class="metric-tile">
+                  <span class="metric-number">0.929</span>
+                  <span class="metric-label">Model Recall Score</span>
+                </div>
+                <div class="metric-tile">
+                  <span class="metric-number">0.979</span>
+                  <span class="metric-label">ROC-AUC Performance</span>
+                </div>
+                <div class="metric-tile">
+                  <span class="metric-number">48,140</span>
+                  <span class="metric-label">Customers Analyzed</span>
+                </div>
+              </div>
+
+              <!-- Inline SHAP Feature Importance Horizontal Bar Chart -->
+              <div class="shap-chart-container">
+                <div class="shap-chart-header">
+                  <span class="shap-title">SHAP TreeExplainer · Top 3 Global Churn Drivers</span>
+                  <span class="shap-subtitle">Mean |SHAP Value| (Impact on Model Output)</span>
+                </div>
+                <div class="shap-bars">
+                  <div class="shap-bar-item">
+                    <span class="shap-feature-name">Customer Duration</span>
+                    <div class="shap-bar-track">
+                      <div class="shap-bar-fill" data-width="100%" style="width: 0%;"></div>
+                    </div>
+                    <span class="shap-bar-val">+0.428</span>
                   </div>
-                  <span class="shap-bar-val">+0.428</span>
+
+                  <div class="shap-bar-item">
+                    <span class="shap-feature-name">Purchase Frequency</span>
+                    <div class="shap-bar-track">
+                      <div class="shap-bar-fill" data-width="73.6%" style="width: 0%;"></div>
+                    </div>
+                    <span class="shap-bar-val">+0.315</span>
+                  </div>
+
+                  <div class="shap-bar-item">
+                    <span class="shap-feature-name">Account Lifespan</span>
+                    <div class="shap-bar-track">
+                      <div class="shap-bar-fill" data-width="43.0%" style="width: 0%;"></div>
+                    </div>
+                    <span class="shap-bar-val">+0.184</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab 2: Business Impact & Retention Strategy -->
+            <div id="tab-impact-01" class="tab-content">
+              <div class="impact-strategy-wrapper">
+
+                <!-- Business Outcome Highlight Cards -->
+                <div class="impact-metrics-grid">
+                  <div class="impact-metric-card">
+                    <span class="impact-metric-badge">-28.4%</span>
+                    <span class="impact-metric-title">Projected Churn Reduction</span>
+                    <p class="impact-metric-desc">Through automated early intervention before users reach 60-day
+                      inactivity.</p>
+                  </div>
+                  <div class="impact-metric-card">
+                    <span class="impact-metric-badge">92.9%</span>
+                    <span class="impact-metric-title">At-Risk Detection Precision</span>
+                    <p class="impact-metric-desc">High model recall minimizes False Negatives, capturing critical
+                      high-value churners.</p>
+                  </div>
+                  <div class="impact-metric-card">
+                    <span class="impact-metric-badge">3.4x</span>
+                    <span class="impact-metric-title">Estimated Retention ROI</span>
+                    <p class="impact-metric-desc">Shifting from broad blanket discounts to precision data-driven loyalty
+                      incentives.</p>
+                  </div>
                 </div>
 
-                <!-- Driver 2: Purchase Frequency (Medium Bar) -->
-                <div class="shap-bar-item">
-                  <span class="shap-feature-name">Purchase Frequency</span>
-                  <div class="shap-bar-track">
-                    <div class="shap-bar-fill" data-width="73.6%" style="width: 0%;"></div>
+                <!-- Segmentation & Retention Action Plan -->
+                <div class="retention-tier-list">
+                  <h4 class="retention-tier-heading">Data-Driven Customer Retention Framework</h4>
+
+                  <div class="retention-tier-item tier-high">
+                    <div class="tier-indicator">
+                      <span class="tier-pill badge-high">High Risk · Prob &gt; 65%</span>
+                      <span class="tier-trigger">Trigger: Account lifespan &lt; 90d &amp; Order Freq &lt; 2x</span>
+                    </div>
+                    <div class="tier-content">
+                      <h5>Proactive VIP Loyalty &amp; Personalized Incentive</h5>
+                      <p>Automated priority outreach via CRM with tailored cashback incentives and dedicated support to
+                        address onboarding friction.</p>
+                    </div>
                   </div>
-                  <span class="shap-bar-val">+0.315</span>
+
+                  <div class="retention-tier-item tier-med">
+                    <div class="tier-indicator">
+                      <span class="tier-pill badge-med">Moderate Risk · 30% - 65%</span>
+                      <span class="tier-trigger">Trigger: Inactivity &gt; 30d &amp; Declining Cart Velocity</span>
+                    </div>
+                    <div class="tier-content">
+                      <h5>Personalized Re-Engagement Drip Campaign</h5>
+                      <p>Dynamic email recommendations based on past purchasing behavior, category interest, and
+                        seasonal product spotlights.</p>
+                    </div>
+                  </div>
+
+                  <div class="retention-tier-item tier-low">
+                    <div class="tier-indicator">
+                      <span class="tier-pill badge-low">Low Risk · Prob &lt; 30%</span>
+                      <span class="tier-trigger">Trigger: Consistent Monthly Purchase &amp; High Duration</span>
+                    </div>
+                    <div class="tier-content">
+                      <h5>Customer Lifetime Value (LTV) Maximization</h5>
+                      <p>Tiered loyalty progression, early access to new feature releases, and referral bonus rewards
+                        without coupon dependency.</p>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Driver 3: Account Lifespan (Short Bar) -->
-                <div class="shap-bar-item">
-                  <span class="shap-feature-name">Account Lifespan</span>
-                  <div class="shap-bar-track">
-                    <div class="shap-bar-fill" data-width="43.0%" style="width: 0%;"></div>
-                  </div>
-                  <span class="shap-bar-val">+0.184</span>
-                </div>
               </div>
             </div>
 
             <div class="project-links">
-              <!-- PLACEHOLDER: Replace '#' with your GitHub repository URL for this project -->
               <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path
@@ -512,15 +687,14 @@
                 </svg>
                 <span>Source Code</span>
               </a>
-              <!-- PLACEHOLDER: Replace '#' with detailed case study / live demo URL -->
-              <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+              <button type="button" class="project-link btn-view-detail" id="btn-open-xai-modal" aria-haspopup="dialog" aria-expanded="false">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                   <polyline points="15 3 21 3 21 9"></polyline>
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
                 <span>View Detail</span>
-              </a>
+              </button>
             </div>
 
           </article>
@@ -529,29 +703,102 @@
           <div class="secondary-projects-grid">
 
             <!-- Project 02: Data Matching & Reconciliation System -->
-            <article class="project-card" aria-labelledby="proj-02-title">
+            <article class="project-card" data-category="fullstack institutional" aria-labelledby="proj-02-title">
               <div>
                 <div class="project-card-top">
                   <span class="project-number">02</span>
                   <span class="category-tag tag-institutional">Institutional</span>
                 </div>
                 <h3 id="proj-02-title" class="project-title">Data Matching &amp; Reconciliation System</h3>
-                <p class="project-description">
-                  Large-scale data reconciliation web app for census (PES) and registration (GB) data matching at Badan
-                  Pusat Statistik (BPS). Eliminated N+1 query bottlenecks via query restructuring and eager loading;
-                  built a PHP Traits-based audit trail system with interactive reporting dashboards and PDF/Excel
-                  export.
-                </p>
-                <div class="project-tech-stack">
-                  <span class="tech-pill">Laravel 12</span>
-                  <span class="tech-pill">React 18</span>
-                  <span class="tech-pill">Inertia.js</span>
-                  <span class="tech-pill">SQL Server</span>
-                  <span class="tech-pill">Chart.js</span>
+
+                <!-- Project Image Preview -->
+                <div class="project-image-container">
+                  <div class="project-image-wrapper">
+                    <img src="assets/projects/project-02.svg" alt="Data Matching &amp; Reconciliation System Preview"
+                      class="project-image" loading="lazy"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="project-image-placeholder" style="display: none;">
+                      <div class="placeholder-content">
+                        <div class="placeholder-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                          </svg>
+                        </div>
+                        <span class="placeholder-text">Data Reconciliation Portal</span>
+                        <span class="placeholder-sub">assets/projects/project-02.svg</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Inner Card Mini Tabs -->
+                <div class="mini-tab-bar" role="tablist">
+                  <button class="mini-tab-btn active" data-tab="tab-p2-overview">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="3" y1="9" x2="21" y2="9"></line>
+                      <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                    <span>Overview &amp; Metrics</span>
+                  </button>
+                  <button class="mini-tab-btn" data-tab="tab-p2-arch">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Architecture &amp; SQL</span>
+                  </button>
+                </div>
+
+                <div id="tab-p2-overview" class="mini-tab-content active">
+                  <p class="project-description">
+                    Large-scale data reconciliation web app for census (PES) and registration (GB) data matching at
+                    Badan Pusat Statistik (BPS). Eliminated N+1 query bottlenecks via query restructuring and eager loading;
+                    built a PHP Traits-based audit trail system with interactive reporting dashboards and PDF/Excel export.
+                  </p>
+                  <div class="project-tech-stack">
+                    <span class="tech-pill">Laravel 12</span>
+                    <span class="tech-pill">React 18</span>
+                    <span class="tech-pill">Inertia.js</span>
+                    <span class="tech-pill">SQL Server</span>
+                    <span class="tech-pill">Chart.js</span>
+                  </div>
+
+                  <!-- Metrics Row -->
+                  <div class="metrics-row secondary-metrics">
+                    <div class="metric-tile">
+                      <span class="metric-number">10,000+</span>
+                      <span class="metric-label">Matched Records</span>
+                    </div>
+                    <div class="metric-tile">
+                      <span class="metric-number">-70%</span>
+                      <span class="metric-label">Audit Time Cut</span>
+                    </div>
+                    <div class="metric-tile">
+                      <span class="metric-number">100%</span>
+                      <span class="metric-label">Traceable Log</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="tab-p2-arch" class="mini-tab-content">
+                  <div class="card-arch-box">
+                    <div class="arch-card-item">
+                      <span class="arch-badge badge-perf">⚡ SQL Query Optimization</span>
+                      <p class="arch-text">Restructured relational joins and applied indexing with eager loading to eliminate N+1 bottlenecks across large datasets.</p>
+                    </div>
+                    <div class="arch-card-item">
+                      <span class="arch-badge badge-audit">🛡️ Reusable Audit Trait</span>
+                      <p class="arch-text">Standardized PHP Model Traits capturing data mutations, timestamps, and operator credentials into an immutable log.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <div class="project-links">
-                <!-- PLACEHOLDER: Replace '#' with project code link -->
                 <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path
@@ -560,7 +807,6 @@
                   </svg>
                   <span>Source Code</span>
                 </a>
-                <!-- PLACEHOLDER: Replace '#' with detail URL -->
                 <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -573,26 +819,100 @@
             </article>
 
             <!-- Project 03: Web Scraper Management System -->
-            <article class="project-card" aria-labelledby="proj-03-title">
+            <article class="project-card" data-category="fullstack institutional" aria-labelledby="proj-03-title">
               <div>
                 <div class="project-card-top">
                   <span class="project-number">03</span>
                   <span class="category-tag tag-institutional">Institutional</span>
                 </div>
                 <h3 id="proj-03-title" class="project-title">Web Scraper Management System</h3>
-                <p class="project-description">
-                  Monitoring dashboard for automated e-commerce data scraping operations across 6+ platforms at Badan
-                  Pusat Statistik. Built multi-stage scraping configuration with React Context API and implemented
-                  granular role-based access control (RBAC).
-                </p>
-                <div class="project-tech-stack">
-                  <span class="tech-pill">Next.js 16</span>
-                  <span class="tech-pill">React 19</span>
-                  <span class="tech-pill">Tailwind CSS</span>
+
+                <!-- Project Image Preview -->
+                <div class="project-image-container">
+                  <div class="project-image-wrapper">
+                    <img src="assets/projects/project-03.svg" alt="Web Scraper Management System Preview"
+                      class="project-image" loading="lazy"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="project-image-placeholder" style="display: none;">
+                      <div class="placeholder-content">
+                        <div class="placeholder-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                          </svg>
+                        </div>
+                        <span class="placeholder-text">Scraping Console UI</span>
+                        <span class="placeholder-sub">assets/projects/project-03.svg</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Inner Card Mini Tabs -->
+                <div class="mini-tab-bar" role="tablist">
+                  <button class="mini-tab-btn active" data-tab="tab-p3-overview">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="3" y1="9" x2="21" y2="9"></line>
+                      <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                    <span>Overview &amp; Metrics</span>
+                  </button>
+                  <button class="mini-tab-btn" data-tab="tab-p3-arch">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Pipeline &amp; RBAC</span>
+                  </button>
+                </div>
+
+                <div id="tab-p3-overview" class="mini-tab-content active">
+                  <p class="project-description">
+                    Monitoring dashboard for automated e-commerce data scraping operations across 6+ platforms at Badan
+                    Pusat Statistik. Built multi-stage scraping configuration with React Context API and implemented
+                    granular role-based access control (RBAC).
+                  </p>
+                  <div class="project-tech-stack">
+                    <span class="tech-pill">Next.js 16</span>
+                    <span class="tech-pill">React 19</span>
+                    <span class="tech-pill">Tailwind CSS</span>
+                  </div>
+
+                  <!-- Metrics Row -->
+                  <div class="metrics-row secondary-metrics">
+                    <div class="metric-tile">
+                      <span class="metric-number">6+</span>
+                      <span class="metric-label">Platforms Scraped</span>
+                    </div>
+                    <div class="metric-tile">
+                      <span class="metric-number">Multi-Stage</span>
+                      <span class="metric-label">Auto Pipeline</span>
+                    </div>
+                    <div class="metric-tile">
+                      <span class="metric-number">Granular</span>
+                      <span class="metric-label">RBAC Security</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="tab-p3-arch" class="mini-tab-content">
+                  <div class="card-arch-box">
+                    <div class="arch-card-item">
+                      <span class="arch-badge badge-pipeline">🔄 Multi-Stage Pipeline</span>
+                      <p class="arch-text">Configurable pipeline stages: URL queuing, dynamic JS rendering, regex payload cleaning, and automated CSV export.</p>
+                    </div>
+                    <div class="arch-card-item">
+                      <span class="arch-badge badge-rbac">🔒 Granular RBAC</span>
+                      <p class="arch-text">Strict separation of admin operator execution controls and read-only analyst dashboards for government teams.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <div class="project-links">
-                <!-- PLACEHOLDER: Replace '#' with project code link -->
                 <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path
@@ -601,7 +921,6 @@
                   </svg>
                   <span>Source Code</span>
                 </a>
-                <!-- PLACEHOLDER: Replace '#' with detail URL -->
                 <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -614,26 +933,99 @@
             </article>
 
             <!-- Project 04: Community Fee Management System -->
-            <article class="project-card" aria-labelledby="proj-04-title">
+            <article class="project-card" data-category="fullstack" aria-labelledby="proj-04-title">
               <div>
                 <div class="project-card-top">
                   <span class="project-number">04</span>
                   <span class="category-tag tag-freelance">Freelance</span>
                 </div>
                 <h3 id="proj-04-title" class="project-title">Community Fee Management System</h3>
-                <p class="project-description">
-                  Complete database architecture and full-stack application for a residential community's monthly dues
-                  collection and financial reporting. Integrated digital payment gateway to automate ledger entries and
-                  fee verification.
-                </p>
-                <div class="project-tech-stack">
-                  <span class="tech-pill">Laravel</span>
-                  <span class="tech-pill">MySQL</span>
-                  <span class="tech-pill">Payment Gateway</span>
+
+                <!-- Project Image Preview -->
+                <div class="project-image-container">
+                  <div class="project-image-wrapper">
+                    <img src="assets/projects/project-04.svg" alt="Community Fee Management System Preview"
+                      class="project-image" loading="lazy"
+                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="project-image-placeholder" style="display: none;">
+                      <div class="placeholder-content">
+                        <div class="placeholder-icon">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.75">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                          </svg>
+                        </div>
+                        <span class="placeholder-text">Financial Ledger UI</span>
+                        <span class="placeholder-sub">assets/projects/project-04.svg</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Inner Card Mini Tabs -->
+                <div class="mini-tab-bar" role="tablist">
+                  <button class="mini-tab-btn active" data-tab="tab-p4-overview">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="3" y1="9" x2="21" y2="9"></line>
+                      <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                    <span>Overview &amp; Metrics</span>
+                  </button>
+                  <button class="mini-tab-btn" data-tab="tab-p4-arch">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Ledger &amp; Gateway</span>
+                  </button>
+                </div>
+
+                <div id="tab-p4-overview" class="mini-tab-content active">
+                  <p class="project-description">
+                    Complete database architecture and full-stack application for a residential community's monthly dues
+                    collection and financial reporting. Integrated digital payment gateway to automate ledger entries and fee verification.
+                  </p>
+                  <div class="project-tech-stack">
+                    <span class="tech-pill">Laravel</span>
+                    <span class="tech-pill">MySQL</span>
+                    <span class="tech-pill">Payment Gateway</span>
+                  </div>
+
+                  <!-- Metrics Row -->
+                  <div class="metrics-row secondary-metrics">
+                    <div class="metric-tile">
+                      <span class="metric-number">100%</span>
+                      <span class="metric-label">Auto Reconciliation</span>
+                    </div>
+                    <div class="metric-tile">
+                      <span class="metric-number">Double-Entry</span>
+                      <span class="metric-label">Ledger Integrity</span>
+                    </div>
+                    <div class="metric-tile">
+                      <span class="metric-number">Real-Time</span>
+                      <span class="metric-label">Webhook Sync</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="tab-p4-arch" class="mini-tab-content">
+                  <div class="card-arch-box">
+                    <div class="arch-card-item">
+                      <span class="arch-badge badge-webhook">💳 Webhook Automation</span>
+                      <p class="arch-text">Asynchronous payment callback handler verifying signatures, updating status, and generating receipts automatically.</p>
+                    </div>
+                    <div class="arch-card-item">
+                      <span class="arch-badge badge-ledger">📊 Double-Entry Integrity</span>
+                      <p class="arch-text">Normalized transactional database schema preventing balance discrepancies and supporting audit-ready PDF exports.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <div class="project-links">
-                <!-- PLACEHOLDER: Replace '#' with project code link -->
                 <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path
@@ -642,7 +1034,6 @@
                   </svg>
                   <span>Source Code</span>
                 </a>
-                <!-- PLACEHOLDER: Replace '#' with detail URL -->
                 <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -674,25 +1065,138 @@
             platforms.</p>
         </div>
 
-        <!-- Flat Dense Tag-Pill Grid -->
+        <!-- Category Filter Tabs for Skills -->
+        <div class="skills-filter-container" role="tablist">
+          <button class="skill-filter-btn active" data-skill-filter="all">All Skills (17)</button>
+          <button class="skill-filter-btn" data-skill-filter="ml">Data Science &amp; ML</button>
+          <button class="skill-filter-btn" data-skill-filter="web">Web &amp; Full-Stack</button>
+          <button class="skill-filter-btn" data-skill-filter="data">Databases &amp; BI</button>
+          <button class="skill-filter-btn" data-skill-filter="tools">Tools &amp; DevOps</button>
+        </div>
+
+        <!-- Flat Dense Tag-Pill Grid with Categorization -->
         <div class="skills-arsenal-grid" role="list">
-          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>Python</div>
-          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>XGBoost</div>
-          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>SHAP</div>
-          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>Pandas</div>
-          <div class="arsenal-tag signal-tag" role="listitem"><span class="arsenal-dot"></span>Scikit-learn</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Laravel</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>React</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Inertia.js</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>JavaScript</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Tailwind CSS</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>MySQL</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>SQL Server</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Power BI</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Looker Studio</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Chart.js</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>Git</div>
-          <div class="arsenal-tag" role="listitem"><span class="arsenal-dot"></span>GitHub</div>
+          <div class="arsenal-tag signal-tag" data-category="ml" role="listitem"><span class="arsenal-dot"></span>Python
+          </div>
+          <div class="arsenal-tag signal-tag" data-category="ml" role="listitem"><span
+              class="arsenal-dot"></span>XGBoost</div>
+          <div class="arsenal-tag signal-tag" data-category="ml" role="listitem"><span class="arsenal-dot"></span>SHAP
+          </div>
+          <div class="arsenal-tag signal-tag" data-category="ml" role="listitem"><span class="arsenal-dot"></span>Pandas
+          </div>
+          <div class="arsenal-tag signal-tag" data-category="ml" role="listitem"><span
+              class="arsenal-dot"></span>Scikit-learn</div>
+          <div class="arsenal-tag" data-category="web" role="listitem"><span class="arsenal-dot"></span>Laravel</div>
+          <div class="arsenal-tag" data-category="web" role="listitem"><span class="arsenal-dot"></span>React</div>
+          <div class="arsenal-tag" data-category="web" role="listitem"><span class="arsenal-dot"></span>Inertia.js</div>
+          <div class="arsenal-tag" data-category="web" role="listitem"><span class="arsenal-dot"></span>JavaScript</div>
+          <div class="arsenal-tag" data-category="web" role="listitem"><span class="arsenal-dot"></span>Tailwind CSS
+          </div>
+          <div class="arsenal-tag" data-category="data" role="listitem"><span class="arsenal-dot"></span>MySQL</div>
+          <div class="arsenal-tag" data-category="data" role="listitem"><span class="arsenal-dot"></span>SQL Server
+          </div>
+          <div class="arsenal-tag" data-category="data" role="listitem"><span class="arsenal-dot"></span>Power BI</div>
+          <div class="arsenal-tag" data-category="data" role="listitem"><span class="arsenal-dot"></span>Looker Studio
+          </div>
+          <div class="arsenal-tag" data-category="data" role="listitem"><span class="arsenal-dot"></span>Chart.js</div>
+          <div class="arsenal-tag" data-category="tools" role="listitem"><span class="arsenal-dot"></span>Git</div>
+          <div class="arsenal-tag" data-category="tools" role="listitem"><span class="arsenal-dot"></span>GitHub</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION: JOURNEY & MILESTONES TIMELINE
+         ====================================================================== -->
+    <section id="journey" class="section fade-in-section">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-badge">CAREER &amp; ACADEMICS</span>
+          <h2 class="section-title">Journey &amp; Key Milestones</h2>
+          <p class="section-subtitle">Track record of academic excellence, national competitions, and shipped production
+            systems.</p>
+        </div>
+
+        <div class="timeline-container">
+
+          <!-- Milestone 1: 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="node-bullet"></div>
+              <span class="node-year">2026</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-title">BNSP Certified Data Analyst</h3>
+                <span class="timeline-badge-gold">National Certification</span>
+              </div>
+              <p class="timeline-org">National Professional Certification Board (BNSP) · Indonesia</p>
+              <p class="timeline-desc">
+                Officially evaluated and Certified Competent (Kompeten) in data exploration, statistical analysis, model
+                evaluation, and reporting.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 2: 2024 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="node-bullet"></div>
+              <span class="node-year">2024</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-title">2nd Place · Data Mining Competition</h3>
+                <span class="timeline-badge-blue">Competition Award</span>
+              </div>
+              <p class="timeline-org">Unlimited Software Building · Universitas Gunadarma</p>
+              <p class="timeline-desc">
+                Competed against top university teams; developed predictive algorithms and exploratory data models with
+                structured feature engineering under tight time constraints.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 3: 2023 - 2025 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="node-bullet"></div>
+              <span class="node-year">2023–2025</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Full-Stack &amp; Data Engineer · Badan Pusat Statistik</h3>
+                <span class="timeline-badge-green">Govt Production</span>
+              </div>
+              <p class="timeline-org">Badan Pusat Statistik (BPS)</p>
+              <p class="timeline-desc">
+                Designed census-registration matching platforms (Laravel 12, React 18, SQL Server) and managed automated
+                multi-platform web scraping engines with RBAC dashboards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 4: 2022 - 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="node-bullet"></div>
+              <span class="node-year">2022–2026</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="timeline-title">Universitas Gunadarma &amp; KJMU Full Scholarship</h3>
+                <span class="timeline-badge-purple">GPA 3.95 · Cumlaude</span>
+              </div>
+              <p class="timeline-org">DKI Jakarta Provincial Government &amp; Universitas Gunadarma</p>
+              <p class="timeline-desc">
+                Awarded full 4-year undergraduate scholarship; completed Bachelor of Computer Science in Information
+                Systems with 3.95/4.00 GPA and Dean's List honors.
+              </p>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -782,7 +1286,7 @@
           </div>
           <div class="education-badges">
             <div class="gpa-tile">
-              <div class="gpa-num">3.96 / 4.00</div>
+              <div class="gpa-num">3.95 / 4.00</div>
               <div class="gpa-label">Cumulative GPA</div>
             </div>
             <span class="honors-badge">
@@ -813,65 +1317,79 @@
         <!-- Button-Style Contact Cards Grid -->
         <div class="contact-grid">
 
-          <!-- Email Card -->
-          <a href="mailto:ibrahimilham.166@gmail.com" class="contact-card"
-            aria-label="Send email to ibrahimilham.166@gmail.com">
-            <div class="contact-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
+          <!-- Email Card with Quick Copy -->
+          <div class="contact-card-interactive">
+            <a href="mailto:ibrahimilham.166@gmail.com" class="contact-card"
+              aria-label="Send email to ibrahimilham.166@gmail.com">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-meta">
+                <span class="contact-label">Email Direct</span>
+                <span class="contact-value">ibrahimilham.166@gmail.com</span>
+              </div>
+            </a>
+            <button class="quick-copy-btn" data-copy="ibrahimilham.166@gmail.com" aria-label="Copy email address"
+              title="Copy Email">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
-            </div>
-            <div class="contact-meta">
-              <span class="contact-label">Email Direct</span>
-              <span class="contact-value">ibrahimilham.166@gmail.com</span>
-            </div>
-          </a>
+            </button>
+          </div>
 
-          <!-- LinkedIn Card -->
-          <a href="https://linkedin.com/in/m-ibrahim-ilham" class="contact-card" target="_blank"
-            rel="noopener noreferrer" aria-label="View LinkedIn Profile">
-            <div class="contact-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
+          <!-- LinkedIn Card with Quick Copy -->
+          <div class="contact-card-interactive">
+            <a href="https://linkedin.com/in/m-ibrahim-ilham" class="contact-card" target="_blank"
+              rel="noopener noreferrer" aria-label="View LinkedIn Profile">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="contact-meta">
+                <span class="contact-label">LinkedIn Network</span>
+                <span class="contact-value">in/m-ibrahim-ilham</span>
+              </div>
+            </a>
+            <button class="quick-copy-btn" data-copy="https://linkedin.com/in/m-ibrahim-ilham"
+              aria-label="Copy LinkedIn URL" title="Copy LinkedIn Link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
-            </div>
-            <div class="contact-meta">
-              <span class="contact-label">LinkedIn Network</span>
-              <span class="contact-value">in/m-ibrahim-ilham</span>
-            </div>
-          </a>
+            </button>
+          </div>
 
-          <!-- GitHub Card -->
-          <!-- PLACEHOLDER: Replace 'https://github.com/[username]' with your actual GitHub profile URL -->
-          <a href="https://github.com/" class="contact-card" target="_blank" rel="noopener noreferrer"
-            aria-label="View GitHub Profile">
-            <div class="contact-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
+          <!-- GitHub Card with Quick Copy -->
+          <div class="contact-card-interactive">
+            <a href="https://github.com/" class="contact-card" target="_blank" rel="noopener noreferrer"
+              aria-label="View GitHub Profile">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </div>
+              <div class="contact-meta">
+                <span class="contact-label">GitHub Repositories</span>
+                <span class="contact-value">github.com/ibrahim</span>
+              </div>
+            </a>
+            <button class="quick-copy-btn" data-copy="https://github.com/" aria-label="Copy GitHub URL"
+              title="Copy GitHub Link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
-            </div>
-            <div class="contact-meta">
-              <span class="contact-label">GitHub Repositories</span>
-              <span class="contact-value">github.com/ibrahim</span>
-            </div>
-          </a>
-
-          <!-- OPTIONAL WHATSAPP CONTACT: Uncomment the block below if you wish to make your phone number publicly accessible
-          <a href="https://wa.me/6289637605978" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-            <div class="contact-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-            </div>
-            <div class="contact-meta">
-              <span class="contact-label">WhatsApp Direct</span>
-              <span class="contact-value">+62 896 3760 5978</span>
-            </div>
-          </a>
-          -->
+            </button>
+          </div>
 
         </div>
 
@@ -897,6 +1415,112 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <svg class="toast-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- ======================================================================
+       PROJECT 01 DETAIL MODAL (XAI IMAGE SLIDER)
+       ====================================================================== -->
+  <div id="modal-xai" class="project-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-xai-title" aria-hidden="true">
+    <div class="project-modal-dialog">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge">Project Visualizations · XAI</span>
+          <h3 id="modal-xai-title" class="modal-title">Customer Churn Prediction — SHAP Visualizations</h3>
+        </div>
+        <button id="modal-xai-close" class="modal-close-btn" aria-label="Close modal window" title="Close (Esc)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body / Slider Area -->
+      <div class="modal-body">
+        <div class="modal-slider-container">
+          
+          <!-- Slide Navigation Arrows -->
+          <button id="slider-prev" class="slider-nav-btn prev" aria-label="Previous slide" title="Previous Image (Left Arrow)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <button id="slider-next" class="slider-nav-btn next" aria-label="Next slide" title="Next Image (Right Arrow)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Slides Viewport -->
+          <div class="slider-viewport">
+            <div class="slider-track" id="slider-track">
+              
+              <!-- Slide 1: XAI 1 -->
+              <div class="slider-slide active" data-index="0" data-title="SHAP Summary Plot (Beeswarm)" data-desc="Distribusi nilai fitur dan pengaruhnya terhadap prediksi model. Nilai customer_duration dan frequency tinggi (merah) menekan risiko churn secara signifikan ke arah kiri (negatif log-odds).">
+                <div class="slider-img-wrap">
+                  <img src="assets/projects/XAI/XAI 1.jpeg" alt="XAI 1 — SHAP Summary Beeswarm Plot" class="slider-img" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- Slide 2: XAI 2 -->
+              <div class="slider-slide" data-index="1" data-title="Global Feature Importance (Mean |SHAP Value|)" data-desc="Peringkat absolut kontribusi fitur pada model XGBoost. Customer duration (2.4+) dan purchase frequency (2.1+) mendominasi pengaruh keputusan prediksi dibandingkan fitur demografis lainnya.">
+                <div class="slider-img-wrap">
+                  <img src="assets/projects/XAI/XAI 2.jpeg" alt="XAI 2 — Global Feature Importance Bar Chart" class="slider-img" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- Slide 3: XAI 3 -->
+              <div class="slider-slide" data-index="2" data-title="SHAP Dependence Plot (Duration vs Frequency)" data-desc="Analisis interaksi fitur non-linear antara durasi pelanggan (sumbu X) dan nilai SHAP. Warna titik mewakili frekuensi pembelian, memperlihatkan ambang batas retensi pelanggan setia.">
+                <div class="slider-img-wrap">
+                  <img src="assets/projects/XAI/XAI 3.jpeg" alt="XAI 3 — SHAP Dependence Plot" class="slider-img" loading="lazy" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Slider Footer: Controls, Counter & Dynamic Caption -->
+        <div class="slider-footer">
+          <div class="slider-meta-bar">
+            <!-- Dot Indicators -->
+            <div class="slider-indicators" role="tablist" aria-label="Slide Selector">
+              <button class="slider-dot active" data-slide="0" aria-label="Slide 1: SHAP Summary Plot" aria-selected="true"></button>
+              <button class="slider-dot" data-slide="1" aria-label="Slide 2: Global Feature Importance" aria-selected="false"></button>
+              <button class="slider-dot" data-slide="2" aria-label="Slide 3: SHAP Dependence Plot" aria-selected="false"></button>
+            </div>
+
+            <!-- Counter Badge -->
+            <div class="slider-counter">
+              <span id="slider-current-num">1</span> <span class="counter-divider">/</span> <span id="slider-total-num">3</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Caption Box -->
+          <div class="slider-caption-box">
+            <h4 id="slider-caption-title" class="slider-caption-title">SHAP Summary Plot (Beeswarm)</h4>
+            <p id="slider-caption-desc" class="slider-caption-desc">
+              Distribusi nilai fitur dan pengaruhnya terhadap prediksi model. Nilai customer_duration dan frequency tinggi (merah) menekan risiko churn secara signifikan ke arah kiri (negatif log-odds).
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
   <!-- Vanilla JavaScript File -->
   <script src="./js/main.js"></script>

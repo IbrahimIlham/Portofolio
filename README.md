@@ -6,7 +6,7 @@ A production-ready personal portfolio website built with pure semantic **HTML5**
 
 ## 🚀 Live Demo & Concept
 
-- **Subject**: M. Ibrahim Ilham — Final-year Information Systems student (Universitas Gunadarma, GPA 3.96/4.00, Cumlaude).
+- **Subject**: M. Ibrahim Ilham — Final-year Information Systems student (Universitas Gunadarma, GPA 3.95/4.00, Cumlaude).
 - **Dual Profile**: Full-Stack Web Developer (Laravel, React) & Applied Data Scientist (Python, XGBoost, SHAP).
 - **Design Philosophy**: *"Engineering rigor, not decoration."* Metrics, real institutional work at Badan Pusat Statistik (BPS), and a named machine learning result driving the visual identity.
 
