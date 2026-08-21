@@ -758,11 +758,9 @@
 
                 <div id="tab-p2-overview" class="mini-tab-content active">
                   <p class="project-description">
-                    Large-scale data reconciliation web app for census (PES) and registration (GB) data matching at
-                    Badan Pusat Statistik (BPS). Eliminated N+1 query bottlenecks via query restructuring and eager
-                    loading;
-                    built a PHP Traits-based audit trail system with interactive reporting dashboards and PDF/Excel
-                    export.
+                    Large-scale data reconciliation web application for census and registration data matching at
+                    Badan Pusat Statistik (BPS). Optimized relational queries for large datasets and implemented
+                    activity tracking throughout the matching workflow.
                   </p>
                   <div class="project-tech-stack">
                     <span class="tech-pill">Laravel 12</span>
@@ -779,12 +777,12 @@
                       <span class="metric-label">Matched Records</span>
                     </div>
                     <div class="metric-tile">
-                      <span class="metric-number">-70%</span>
-                      <span class="metric-label">Audit Time Cut</span>
+                      <span class="metric-number">Optimized</span>
+                      <span class="metric-label">Query Speed</span>
                     </div>
                     <div class="metric-tile">
-                      <span class="metric-number">100%</span>
-                      <span class="metric-label">Traceable Log</span>
+                      <span class="metric-number">Activity</span>
+                      <span class="metric-label">Audit Trail</span>
                     </div>
                   </div>
                 </div>
@@ -793,13 +791,11 @@
                   <div class="card-arch-box">
                     <div class="arch-card-item">
                       <span class="arch-badge badge-perf">⚡ SQL Query Optimization</span>
-                      <p class="arch-text">Restructured relational joins and applied indexing with eager loading to
-                        eliminate N+1 bottlenecks across large datasets.</p>
+                      <p class="arch-text">Optimized relational queries and data retrieval processes to support efficient matching across large datasets.</p>
                     </div>
                     <div class="arch-card-item">
-                      <span class="arch-badge badge-audit">🛡️ Reusable Audit Trait</span>
-                      <p class="arch-text">Standardized PHP Model Traits capturing data mutations, timestamps, and
-                        operator credentials into an immutable log.</p>
+                      <span class="arch-badge badge-audit">🛡️ Audit Trail</span>
+                      <p class="arch-text">Implemented activity tracking to record data changes and operator actions throughout the matching workflow.</p>
                     </div>
                   </div>
                 </div>
@@ -878,9 +874,9 @@
 
                 <div id="tab-p3-overview" class="mini-tab-content active">
                   <p class="project-description">
-                    Monitoring dashboard for automated e-commerce data scraping operations across 6+ platforms at Badan
-                    Pusat Statistik. Built multi-stage scraping configuration with React Context API and implemented
-                    granular role-based access control (RBAC).
+                    Monitoring dashboard for automated e-commerce data scraping operations across platforms at Badan
+                    Pusat Statistik. Built a configurable multi-stage scraping workflow with integrated role-based
+                    access control.
                   </p>
                   <div class="project-tech-stack">
                     <span class="tech-pill">Next.js 16</span>
@@ -899,8 +895,8 @@
                       <span class="metric-label">Auto Pipeline</span>
                     </div>
                     <div class="metric-tile">
-                      <span class="metric-number">Granular</span>
-                      <span class="metric-label">RBAC Security</span>
+                      <span class="metric-number">Role-Based</span>
+                      <span class="metric-label">Access Control</span>
                     </div>
                   </div>
                 </div>
@@ -909,13 +905,11 @@
                   <div class="card-arch-box">
                     <div class="arch-card-item">
                       <span class="arch-badge badge-pipeline">🔄 Multi-Stage Pipeline</span>
-                      <p class="arch-text">Configurable pipeline stages: URL queuing, dynamic JS rendering, regex
-                        payload cleaning, and automated CSV export.</p>
+                      <p class="arch-text">Configurable scraping workflow covering URL queuing, dynamic page rendering, data cleaning, and automated CSV export.</p>
                     </div>
                     <div class="arch-card-item">
-                      <span class="arch-badge badge-rbac">🔒 Granular RBAC</span>
-                      <p class="arch-text">Strict separation of admin operator execution controls and read-only analyst
-                        dashboards for government teams.</p>
+                      <span class="arch-badge badge-rbac">🔒 Role-Based Access Control</span>
+                      <p class="arch-text">Separated system access and operational permissions based on user roles.</p>
                     </div>
                   </div>
                 </div>
@@ -988,15 +982,15 @@
                       <polyline points="16 18 22 12 16 6"></polyline>
                       <polyline points="8 6 2 12 8 18"></polyline>
                     </svg>
-                    <span>Ledger &amp; Gateway</span>
+                    <span>Integrity &amp; Webhook</span>
                   </button>
                 </div>
 
                 <div id="tab-p4-overview" class="mini-tab-content active">
                   <p class="project-description">
-                    Complete database architecture and full-stack application for a residential community's monthly dues
-                    collection and financial reporting. Integrated digital payment gateway to automate ledger entries
-                    and fee verification.
+                    Structured database architecture and full-stack application for residential community dues
+                    collection and financial reporting. Integrated payment callbacks to update transaction statuses and
+                    maintain accurate records.
                   </p>
                   <div class="project-tech-stack">
                     <span class="tech-pill">Laravel</span>
@@ -1011,8 +1005,8 @@
                       <span class="metric-label">Auto Reconciliation</span>
                     </div>
                     <div class="metric-tile">
-                      <span class="metric-number">Double-Entry</span>
-                      <span class="metric-label">Ledger Integrity</span>
+                      <span class="metric-number">Structured</span>
+                      <span class="metric-label">Data Integrity</span>
                     </div>
                     <div class="metric-tile">
                       <span class="metric-number">Real-Time</span>
@@ -1024,14 +1018,12 @@
                 <div id="tab-p4-arch" class="mini-tab-content">
                   <div class="card-arch-box">
                     <div class="arch-card-item">
-                      <span class="arch-badge badge-webhook">💳 Webhook Automation</span>
-                      <p class="arch-text">Asynchronous payment callback handler verifying signatures, updating status,
-                        and generating receipts automatically.</p>
+                      <span class="arch-badge badge-webhook">💳 Payment Webhook Automation</span>
+                      <p class="arch-text">Integrated payment callbacks to automatically update transaction statuses and support payment confirmation workflows.</p>
                     </div>
                     <div class="arch-card-item">
-                      <span class="arch-badge badge-ledger">📊 Double-Entry Integrity</span>
-                      <p class="arch-text">Normalized transactional database schema preventing balance discrepancies and
-                        supporting audit-ready PDF exports.</p>
+                      <span class="arch-badge badge-ledger">📊 Transactional Data Integrity</span>
+                      <p class="arch-text">Designed a structured database schema to maintain consistent payment records and support reliable financial reporting.</p>
                     </div>
                   </div>
                 </div>
