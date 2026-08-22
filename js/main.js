@@ -574,163 +574,198 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 17. Project Detail Modal & Image Slider (XAI)
+  // 17. Multi-Project Detail Modals & Image Sliders Controller
   // ------------------------------------------------------------------------
-  const modalXai = document.getElementById('modal-xai');
-  const btnOpenXaiModal = document.getElementById('btn-open-xai-modal');
-  const btnCloseXaiModal = document.getElementById('modal-xai-close');
-  const sliderTrack = document.getElementById('slider-track');
-  const sliderPrevBtn = document.getElementById('slider-prev');
-  const sliderNextBtn = document.getElementById('slider-next');
-  const sliderDots = document.querySelectorAll('.slider-dot');
-  const sliderSlides = document.querySelectorAll('.slider-slide');
-  const currentNumEl = document.getElementById('slider-current-num');
-  const totalNumEl = document.getElementById('slider-total-num');
-  const captionTitleEl = document.getElementById('slider-caption-title');
-  const captionDescEl = document.getElementById('slider-caption-desc');
+  const allModals = document.querySelectorAll('.project-modal-backdrop');
+  let activeModal = null;
+  const modalSliders = new Map();
 
-  let currentSlideIndex = 0;
-  const totalSlides = sliderSlides.length;
+  // Initialize Slider for each Modal
+  allModals.forEach((modal) => {
+    const modalId = modal.getAttribute('id');
+    const sliderTrack = modal.querySelector('.slider-track');
+    const sliderSlides = modal.querySelectorAll('.slider-slide');
+    const sliderDots = modal.querySelectorAll('.slider-dot');
+    const sliderPrevBtn = modal.querySelector('.slider-nav-btn.prev');
+    const sliderNextBtn = modal.querySelector('.slider-nav-btn.next');
+    const currentNumEl = modal.querySelector('.slider-current-num');
+    const totalNumEl = modal.querySelector('.slider-total-num');
+    const captionTitleEl = modal.querySelector('.slider-caption-title');
+    const captionDescEl = modal.querySelector('.slider-caption-desc');
+    const closeBtns = modal.querySelectorAll('.modal-close-btn, [data-modal-close]');
+    const sliderViewport = modal.querySelector('.slider-viewport');
 
-  if (totalNumEl) {
-    totalNumEl.textContent = totalSlides;
-  }
+    const totalSlides = sliderSlides.length;
+    let currentIndex = 0;
 
-  const updateSlide = (index) => {
-    if (totalSlides === 0) return;
-
-    // Wrap-around index
-    if (index < 0) {
-      currentSlideIndex = totalSlides - 1;
-    } else if (index >= totalSlides) {
-      currentSlideIndex = 0;
-    } else {
-      currentSlideIndex = index;
+    if (totalNumEl) {
+      totalNumEl.textContent = totalSlides;
     }
 
-    // Move track
-    if (sliderTrack) {
-      sliderTrack.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-    }
+    const updateSlide = (index) => {
+      if (totalSlides === 0) return;
 
-    // Update active slide state
-    sliderSlides.forEach((slide, idx) => {
-      if (idx === currentSlideIndex) {
-        slide.classList.add('active');
-        // Update caption
-        const title = slide.getAttribute('data-title') || '';
-        const desc = slide.getAttribute('data-desc') || '';
-        if (captionTitleEl) captionTitleEl.textContent = title;
-        if (captionDescEl) captionDescEl.textContent = desc;
+      if (index < 0) {
+        currentIndex = totalSlides - 1;
+      } else if (index >= totalSlides) {
+        currentIndex = 0;
       } else {
-        slide.classList.remove('active');
+        currentIndex = index;
       }
+
+      if (sliderTrack) {
+        sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      sliderSlides.forEach((slide, idx) => {
+        if (idx === currentIndex) {
+          slide.classList.add('active');
+          const title = slide.getAttribute('data-title') || '';
+          const desc = slide.getAttribute('data-desc') || '';
+          if (captionTitleEl) captionTitleEl.textContent = title;
+          if (captionDescEl) captionDescEl.textContent = desc;
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      sliderDots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('active');
+          dot.setAttribute('aria-selected', 'true');
+        } else {
+          dot.classList.remove('active');
+          dot.setAttribute('aria-selected', 'false');
+        }
+      });
+
+      if (currentNumEl) {
+        currentNumEl.textContent = currentIndex + 1;
+      }
+    };
+
+    // Navigation buttons
+    sliderPrevBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      updateSlide(currentIndex - 1);
     });
 
-    // Update dot indicators
+    sliderNextBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      updateSlide(currentIndex + 1);
+    });
+
+    // Dot indicators
     sliderDots.forEach((dot, idx) => {
-      if (idx === currentSlideIndex) {
-        dot.classList.add('active');
-        dot.setAttribute('aria-selected', 'true');
-      } else {
-        dot.classList.remove('active');
-        dot.setAttribute('aria-selected', 'false');
+      dot.addEventListener('click', () => {
+        updateSlide(idx);
+      });
+    });
+
+    // Close buttons
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal(modal);
+      });
+    });
+
+    // Backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal(modal);
       }
     });
 
-    // Update counter
-    if (currentNumEl) {
-      currentNumEl.textContent = currentSlideIndex + 1;
-    }
-  };
+    // Touch Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-  const openXaiModal = () => {
-    if (!modalXai) return;
-    modalXai.classList.add('is-open');
-    modalXai.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    updateSlide(currentSlideIndex);
-  };
+    sliderViewport?.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
 
-  const closeXaiModal = () => {
-    if (!modalXai) return;
-    modalXai.classList.remove('is-open');
-    modalXai.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  };
+    sliderViewport?.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 40;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        updateSlide(currentIndex + 1); // Next
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+        updateSlide(currentIndex - 1); // Prev
+      }
+    }, { passive: true });
 
-  // Trigger Open
-  btnOpenXaiModal?.addEventListener('click', (e) => {
-    e.preventDefault();
-    openXaiModal();
-  });
-
-  // Trigger Close
-  btnCloseXaiModal?.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeXaiModal();
-  });
-
-  // Click outside to close (backdrop click)
-  modalXai?.addEventListener('click', (e) => {
-    if (e.target === modalXai) {
-      closeXaiModal();
-    }
-  });
-
-  // Slider Controls
-  sliderPrevBtn?.addEventListener('click', (e) => {
-    e.preventDefault();
-    updateSlide(currentSlideIndex - 1);
-  });
-
-  sliderNextBtn?.addEventListener('click', (e) => {
-    e.preventDefault();
-    updateSlide(currentSlideIndex + 1);
-  });
-
-  // Dot Click Handlers
-  sliderDots.forEach((dot, idx) => {
-    dot.addEventListener('click', () => {
-      updateSlide(idx);
+    // Store controller interface
+    modalSliders.set(modalId, {
+      updateSlide,
+      reset: () => updateSlide(0),
+      prev: () => updateSlide(currentIndex - 1),
+      next: () => updateSlide(currentIndex + 1)
     });
   });
 
-  // Keyboard navigation when modal is open
+  const openModal = (modalId) => {
+    const targetModal = document.getElementById(modalId);
+    if (!targetModal) return;
+
+    if (activeModal && activeModal !== targetModal) {
+      closeModal(activeModal);
+    }
+
+    targetModal.classList.add('is-open');
+    targetModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    activeModal = targetModal;
+
+    const controller = modalSliders.get(modalId);
+    if (controller) {
+      controller.reset();
+    }
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (activeModal === modal) {
+      activeModal = null;
+    }
+  };
+
+  // Attach Open Triggers to View Detail buttons & image preview containers
+  const modalTriggers = document.querySelectorAll('[data-modal-target], .btn-view-detail');
+  modalTriggers.forEach(trigger => {
+    const handleTrigger = (e) => {
+      e.preventDefault();
+      const targetId = trigger.getAttribute('data-modal-target') || (trigger.id === 'btn-open-xai-modal' ? 'modal-xai' : null);
+      if (targetId) {
+        openModal(targetId);
+      }
+    };
+
+    trigger.addEventListener('click', handleTrigger);
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        handleTrigger(e);
+      }
+    });
+  });
+
+  // Global Keyboard Navigation (Esc, Left Arrow, Right Arrow)
   window.addEventListener('keydown', (e) => {
-    if (!modalXai || !modalXai.classList.contains('is-open')) return;
+    if (!activeModal || !activeModal.classList.contains('is-open')) return;
+
+    const modalId = activeModal.getAttribute('id');
+    const controller = modalSliders.get(modalId);
 
     if (e.key === 'Escape') {
-      closeXaiModal();
-    } else if (e.key === 'ArrowLeft') {
-      updateSlide(currentSlideIndex - 1);
-    } else if (e.key === 'ArrowRight') {
-      updateSlide(currentSlideIndex + 1);
+      closeModal(activeModal);
+    } else if (e.key === 'ArrowLeft' && controller) {
+      controller.prev();
+    } else if (e.key === 'ArrowRight' && controller) {
+      controller.next();
     }
   });
-
-  // Touch Swipe Gesture Support
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  const sliderViewport = modalXai?.querySelector('.slider-viewport');
-
-  sliderViewport?.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  sliderViewport?.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipeGesture();
-  }, { passive: true });
-
-  const handleSwipeGesture = () => {
-    const swipeThreshold = 40;
-    if (touchEndX < touchStartX - swipeThreshold) {
-      updateSlide(currentSlideIndex + 1); // Swiped Left -> Next
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-      updateSlide(currentSlideIndex - 1); // Swiped Right -> Prev
-    }
-  };
 });
