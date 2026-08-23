@@ -919,6 +919,12 @@ button {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 100%;
+}
+
+.featured-project {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -929,6 +935,7 @@ button {
     box-shadow: var(--shadow-card);
     transition: all var(--transition-base);
     position: relative;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -1321,24 +1328,211 @@ button {
 /* Secondary Projects Grid (02, 03, 04) */
 .secondary-projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .secondary-projects-grid .project-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     padding: 28px;
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+}
+
+.secondary-projects-grid .project-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.secondary-projects-grid .project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    height: 28px;
 }
 
 .secondary-projects-grid .project-title {
-    font-size: 1.25rem;
-    margin-top: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    min-height: 3.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.secondary-projects-grid .project-image-container {
+    width: 100%;
+    margin: 0 0 16px 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.secondary-projects-grid .project-image-wrapper {
+    height: 175px;
+    width: 100%;
+    aspect-ratio: auto;
+}
+
+.secondary-projects-grid .mini-tab-bar {
+    display: flex;
+    height: 38px;
+    margin-bottom: 16px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.secondary-projects-grid .mini-tab-btn {
+    flex: 1;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 8px;
+    font-size: 0.78125rem;
+}
+
+.secondary-projects-grid .mini-tab-content {
+    display: none;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.secondary-projects-grid .mini-tab-content.active {
+    display: flex;
 }
 
 .secondary-projects-grid .project-description {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    min-height: 5.4rem;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.secondary-projects-grid .project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 6px;
+    min-height: 58px;
+    margin-bottom: 16px;
+}
+
+.secondary-projects-grid .tech-pill {
+    padding: 3px 9px;
+    font-size: 0.75rem;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.secondary-projects-grid .metrics-row.secondary-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.secondary-projects-grid .secondary-metrics .metric-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 4px;
+    min-height: 68px;
+    box-sizing: border-box;
+}
+
+.secondary-projects-grid .secondary-metrics .metric-number {
     font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 3px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.secondary-projects-grid .secondary-metrics .metric-label {
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.2em;
+}
+
+.secondary-projects-grid .card-arch-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+    margin-bottom: 0;
+    min-height: calc(5.4rem + 14px + 58px + 16px + 68px);
+    justify-content: space-between;
+}
+
+.secondary-projects-grid .arch-card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 12px;
+    flex: 1;
+}
+
+.secondary-projects-grid .arch-text {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--color-text-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+}
+
+.secondary-projects-grid .project-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 18px;
+    margin-top: 18px;
+    border-top: 1px solid var(--color-divider);
+}
+
+.secondary-projects-grid .project-link {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+    height: 38px;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 /* --------------------------------------------------------------------------
@@ -2329,22 +2523,8 @@ button {
 }
 
 /* Secondary Projects Metric Tiles */
-.metrics-row.secondary-metrics {
-    margin-top: 14px;
-    margin-bottom: 14px;
-    gap: 8px;
-}
-
 .secondary-metrics .metric-tile {
-    padding: 10px 8px;
-}
-
-.secondary-metrics .metric-number {
-    font-size: 1.0625rem;
-}
-
-.secondary-metrics .metric-label {
-    font-size: 0.6875rem;
+    padding: 8px 4px;
 }
 
 /* Structured Architecture Card Box */
