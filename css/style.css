@@ -1575,45 +1575,51 @@ button {
 .skills-arsenal-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .arsenal-tag {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 9px 18px;
+    gap: 10px;
+    padding: 10px 18px;
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
-    font-family: var(--font-mono);
-    font-size: 0.84375rem;
-    font-weight: 500;
-    color: var(--color-text-primary);
     box-shadow: var(--shadow-subtle);
     transition: all var(--transition-fast);
+    cursor: default;
+    user-select: none;
 }
 
 .arsenal-tag:hover {
     border-color: var(--color-accent-primary);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--shadow-hover);
+    background-color: #FFFFFF;
 }
 
-.arsenal-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #94A3B8;
-    transition: all var(--transition-fast);
+.skill-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.signal-tag {
-    border-color: var(--color-accent-primary-border);
+.skill-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
-.signal-tag .arsenal-dot {
-    background-color: var(--color-accent-primary);
+.skill-name {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
 }
 
 /* --------------------------------------------------------------------------
@@ -1624,16 +1630,16 @@ button {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .timeline-container::before {
     content: '';
     position: absolute;
-    top: 16px;
-    bottom: 16px;
-    left: 39px;
+    top: 24px;
+    bottom: 24px;
+    left: 125px;
     width: 2px;
     background-color: var(--color-border);
     z-index: 0;
@@ -1642,49 +1648,70 @@ button {
 .timeline-item {
     position: relative;
     display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 24px;
+    grid-template-columns: 110px 30px 1fr;
     align-items: flex-start;
     z-index: 1;
 }
 
-.timeline-node {
+.timeline-year-col {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    gap: 8px;
+    padding-top: 18px;
+    padding-right: 12px;
 }
 
-.node-bullet {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--color-surface);
-    border: 3px solid var(--color-accent-primary);
-    box-shadow: 0 0 0 4px var(--color-bg);
-}
-
-.node-year {
+.timeline-year-badge {
+    display: inline-flex;
+    align-items: center;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.78125rem;
     font-weight: 700;
     color: var(--color-accent-primary);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
     white-space: nowrap;
 }
 
+.timeline-node-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 22px;
+}
+
+.node-bullet {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 3px solid var(--color-accent-primary);
+    box-shadow: 0 0 0 4px var(--color-bg);
+    transition: all var(--transition-fast);
+}
+
+.timeline-item:hover .node-bullet {
+    background-color: var(--color-accent-primary);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 5px rgba(15, 23, 42, 0.12);
+}
+
 .timeline-card {
-    background-color: var(--color-bg);
+    background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 22px 26px;
     box-shadow: var(--shadow-subtle);
     transition: all var(--transition-base);
+    margin-left: 12px;
 }
 
 .timeline-card:hover {
     transform: translateX(4px);
     border-color: var(--color-accent-primary);
-    background-color: var(--color-surface);
     box-shadow: var(--shadow-card);
 }
 
@@ -1702,6 +1729,7 @@ button {
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--color-text-primary);
+    line-height: 1.35;
 }
 
 .timeline-badge-gold {
@@ -1763,24 +1791,33 @@ button {
 
 @media (max-width: 640px) {
     .timeline-container::before {
-        left: 12px;
+        left: 17px;
     }
 
     .timeline-item {
-        grid-template-columns: 24px 1fr;
-        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 36px;
+        position: relative;
+        gap: 8px;
     }
 
-    .timeline-node {
-        align-items: flex-start;
+    .timeline-node-col {
+        position: absolute;
+        left: 10px;
+        top: 2px;
+        padding-top: 0;
     }
 
-    .node-bullet {
-        margin-left: 4px;
+    .timeline-year-col {
+        justify-content: flex-start;
+        padding: 0;
     }
 
-    .node-year {
-        display: none;
+    .timeline-card {
+        margin-left: 0;
+        width: 100%;
+        padding: 18px 20px;
     }
 }
 
