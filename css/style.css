@@ -2238,8 +2238,15 @@ button {
     }
 
     .hero {
-        padding-top: 36px;
+        padding-top: calc(var(--header-height) + 28px);
         padding-bottom: 48px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.71875rem;
+        letter-spacing: 0.05em;
+        padding: 5px 12px;
+        margin-bottom: 16px;
     }
 
     .hero-title {
